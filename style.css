@@ -551,10 +551,12 @@ body {
 
 .modal-video-container {
   width: 100%;
+  aspect-ratio: 16 / 9; /* Fuerza la proporción panorámica estándar 16:9 */
   margin: 1.2rem 0;
   border-radius: 10px;
   overflow: hidden;
   background-color: #000;
+  position: relative;
 }
 
 .modal-video-container iframe,
@@ -563,6 +565,7 @@ body {
   height: 100%;
   border: 0;
   display: block;
+  object-fit: cover;
 }
 
 .modal-title {

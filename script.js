@@ -68,7 +68,7 @@ const projectsDetails = {
   medievalTavern: {
     title: "Medieval Tavern Environment",
     role: "Project Lead & Environment Artist",
-    videoSrc: "vid/Taverna.mp4",
+    trailerEmbedUrl: "https://www.youtube.com/embed/N50aYECaGnc", 
     teamSize: "4",
     devTime: "3 weeks",
     techStack: "Maya, ZBrush, Substance Painter, Unity",
