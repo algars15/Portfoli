@@ -3,10 +3,10 @@ const projectsDetails = {
   odossea: {
     title: "Odossea",
     role: "Level Designer & Game Designer",
+    award: " Best Technology Award – 9th Gran CITM Game Jam",
     trailerEmbedUrl: "https://www.youtube.com/embed/eQ3rLHv5RtA",
-    // Dades per a la barra inferior
     teamSize: "5",
-    devTime: "1 week", 
+    devTime: "1 week",
     techStack: "Unity (C#)",
     contributions: [
       "Conceptualized and balanced the primary puzzle and movement mechanics.",
@@ -15,7 +15,7 @@ const projectsDetails = {
     ],
     team: [
       { name: "Martí Mira", role: "Level Designer & Game Designer" },
-      { name: "Marc Blànquez", role: "Lead Programmer" },
+      { name: "Marc Blánquez", role: "Lead Programmer" },
       { name: "Arnau Balasch", role: "2D Artist" },
       { name: "Oscar Alonso", role: "Programmer & Level Designer" },
       { name: "Toni Llovera", role: "UI/UX Designer & Programmer" }
@@ -28,10 +28,9 @@ const projectsDetails = {
     role: "UI/UX Designer",
     trailerEmbedUrl: "https://www.youtube.com/embed/4wju0iSo_dE",
     coverImg: "img/PM/Titol.png",
-    // Dades per a la barra inferior
     teamSize: "3",
     devTime: "1 month",
-    techStack: "Unity (C#)", // o HTML5 / Web segons com ho tinguis
+    techStack: "Unity (C#)",
     contributions: [
       "Conceptualized the core educational game flow and dynamic word puzzle progression.",
       "Designed and structured clean, accessible UI layouts for browser gameplay.",
@@ -39,7 +38,7 @@ const projectsDetails = {
     ],
     team: [
       { name: "Martí Mira", role: "UI/UX Designer" },
-      { name: "Marc Blànquez", role: "Lead Programmer" },
+      { name: "Marc Blánquez", role: "Lead Programmer" },
       { name: "Arnau Balasch", role: "2D Artist" }
     ],
     itchioLink: "https://mmiraa15.itch.io/paraules-magiques"
@@ -48,6 +47,7 @@ const projectsDetails = {
   sonOfIthaca: {
     title: "Son of Ithaca",
     role: "3D Artist & Level Designer",
+    award: " Nominee: Best Academic Game – IndieDevDay / SAGA Game Fest 2026",
     trailerEmbedUrl: "https://www.youtube.com/embed/PYzuc0fsHpM",
     teamSize: "31",
     devTime: "4 months",
@@ -59,17 +59,44 @@ const projectsDetails = {
       "Executed set dressing and environmental staging across Levels 1 and 2 to significantly enhance visual fidelity.",
       "Designed UI gameplay elements, including the health bar interface for the final boss encounter."
     ],
-
+    team: [
+      { name: "Martí Mira", role: "3D Artist & Level Design" },
+      { name: "Nobody Games Studio", role: "Development & Production" }
+    ],
     itchioLink: "https://nobody-games-studio.itch.io/son-of-ithaca"
+  },
+
+  medievalTavern: {
+    title: "Medieval Tavern Environment",
+    role: "Project Lead & Environment Artist",
+    trailerEmbedUrl: "https://www.youtube.com/embed/N50aYECaGnc",
+    teamSize: "4",
+    devTime: "3 weeks",
+    techStack: "Maya, ZBrush, Substance Painter, Unity",
+    contributions: [
+      "Led the project direction and coordinated team milestones and production workflow.",
+      "Modeled and textured modular architectural elements (interior door, stairs, beams, columns, railings) and hero props (axe, mug).",
+      "Created initial blockout and assembled the full level scene, set dressing, and prefab/material setup in Unity.",
+      "Configured environmental lighting, baked lightmaps, and set up the post-processing stack.",
+      "Curated external assets and integrated decorative artwork into the environment."
+    ],
+    gallery: [
+      { src: "img/Tavern/cap1.png", caption: "Main Hall from above" },
+      { src: "img/Tavern/cap2.png", caption: "Bar Counter" },
+      { src: "img/Tavern/cap4.png", caption: "Tavern wine cellar" },
+      { src: "img/Tavern/cap3.png", caption: "Main Hall" }
+
+    ],
+   
+    artstationLink: "https://www.artstation.com/artwork/1NGo48"
   }
 };
-
 
 function openProjectModal(projectId) {
   const project = projectsDetails[projectId];
   if (!project) return;
 
-  // 1. Multimèdia (Tràiler o imatge)
+  // 1. Multimèdia (Tràiler o imatge de capçalera)
   let mediaHtml = "";
   if (project.trailerEmbedUrl) {
     mediaHtml = `
@@ -89,7 +116,7 @@ function openProjectModal(projectId) {
     `;
   }
 
-  // 2. Barra ràpida: Integrants, Temps i Tecnologia (amb icones SVG vectorials)
+  // 2. Barra ràpida de metadades
   let metaBarHtml = "";
   if (project.teamSize || project.devTime || project.techStack) {
     metaBarHtml = `
@@ -125,7 +152,7 @@ function openProjectModal(projectId) {
     `;
   }
 
-  // 3. Llista de membres
+  // 3. Equip de desenvolupament
   let teamHtml = "";
   if (project.team && project.team.length > 0) {
     teamHtml = `
@@ -141,7 +168,46 @@ function openProjectModal(projectId) {
     `;
   }
 
-  // 4. Inserció al cos del modal (TÍTOL A DALT DE TOT)
+  // 4. Galeria d'imatges i breakdowns (si en té)
+  let galleryHtml = "";
+  if (project.gallery && project.gallery.length > 0) {
+    galleryHtml = `
+      <h3 class="modal-section-title">Environment Gallery </h3>
+      <div class="modal-gallery-grid">
+        ${project.gallery.map(img => `
+          <figure class="modal-gallery-item">
+            <img src="${img.src}" alt="${img.caption}" loading="lazy" onclick="window.open('${img.src}', '_blank')">
+            <figcaption>${img.caption}</figcaption>
+          </figure>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  // 5. Botons d'enllaços externs (Itch.io i/o ArtStation)
+  let actionButtonsHtml = "";
+  if (project.itchioLink) {
+    actionButtonsHtml += `
+      <a href="${project.itchioLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-itch">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
+          <path d="M3.193 2c-.655 0-1.193.538-1.193 1.193v2.859c0 .655.538 1.193 1.193 1.193h.084c.655 0 1.193-.538 1.193-1.193V3.193C4.47 2.538 3.932 2 3.277 2zm17.614 0c-.655 0-1.193.538-1.193 1.193v2.859c0 .655.538 1.193 1.193 1.193h.084c.655 0 1.193-.538 1.193-1.193V3.193c0-.655-.538-1.193-1.193-1.193zM5.568 5.625c-.714 0-1.293.58-1.293 1.294v4.453c0 .714.579 1.294 1.293 1.294h1.791c.714 0 1.293-.58 1.293-1.294V6.919c0-.714-.579-1.294-1.293-1.294zm12.864 0c-.714 0-1.293.58-1.293 1.294v4.453c0 .714.579 1.294 1.293 1.294h1.791c.714 0 1.293-.58 1.293-1.294V6.919c0-.714-.579-1.294-1.293-1.294zm-9.336 2.375c-.714 0-1.293.58-1.293 1.294v2.078c0 .714.579 1.294 1.293 1.294h3.408c.714 0 1.293-.58 1.293-1.294V9.294c0-.714-.579-1.294-1.293-1.294zM2 13.917v5.333C2 20.767 3.233 22 4.75 22h14.5c1.517 0 2.75-1.233 2.75-2.75v-5.333H2zm6.2 2.75h1.6v1.6H8.2zm4.8 0h1.6v1.6H13z"/>
+        </svg>
+        Play on Itch.io
+      </a>
+    `;
+  }
+  if (project.artstationLink) {
+    actionButtonsHtml += `
+      <a href="${project.artstationLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-view" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M0 17.723l2.027 3.505h.001a2.424 2.424 0 0 0 2.164 1.332h13.684l-2.585-4.477H0v-.36zm15.66-2.908l-4.707-8.152L6.246 14.815h9.414zm7.986 4.312L16.294 3.018A2.43 2.43 0 0 0 14.184 1.7h-.077a2.428 2.428 0 0 0-2.106 1.258L9.957 6.45l7.653 13.256h4.526a1.21 1.21 0 0 0 1.054-.627 1.22 1.22 0 0 0 .456-1.079z"/>
+        </svg>
+        View on ArtStation
+      </a>
+    `;
+  }
+
+  // 6. Inserció al cos del modal
   const modalBody = document.getElementById("modal-body");
   modalBody.innerHTML = `
     <h2 class="modal-title">${project.title}</h2>
@@ -149,7 +215,6 @@ function openProjectModal(projectId) {
     <p class="modal-subtitle"><strong>Role:</strong> ${project.role}</p>
 
     ${mediaHtml}
-
     ${metaBarHtml}
 
     <h3 class="modal-section-title">My Key Contributions</h3>
@@ -157,15 +222,12 @@ function openProjectModal(projectId) {
       ${project.contributions.map(item => `<li>${item}</li>`).join("")}
     </ul>
 
+    ${galleryHtml}
+
     ${teamHtml}
 
-    <div class="modal-footer">
-      <a href="${project.itchioLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-itch">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;">
-          <path d="M3.193 2c-.655 0-1.193.538-1.193 1.193v2.859c0 .655.538 1.193 1.193 1.193h.084c.655 0 1.193-.538 1.193-1.193V3.193C4.47 2.538 3.932 2 3.277 2zm17.614 0c-.655 0-1.193.538-1.193 1.193v2.859c0 .655.538 1.193 1.193 1.193h.084c.655 0 1.193-.538 1.193-1.193V3.193c0-.655-.538-1.193-1.193-1.193zM5.568 5.625c-.714 0-1.293.58-1.293 1.294v4.453c0 .714.579 1.294 1.293 1.294h1.791c.714 0 1.293-.58 1.293-1.294V6.919c0-.714-.579-1.294-1.293-1.294zm12.864 0c-.714 0-1.293.58-1.293 1.294v4.453c0 .714.579 1.294 1.293 1.294h1.791c.714 0 1.293-.58 1.293-1.294V6.919c0-.714-.579-1.294-1.293-1.294zm-9.336 2.375c-.714 0-1.293.58-1.293 1.294v2.078c0 .714.579 1.294 1.293 1.294h3.408c.714 0 1.293-.58 1.293-1.294V9.294c0-.714-.579-1.294-1.293-1.294zM2 13.917v5.333C2 20.767 3.233 22 4.75 22h14.5c1.517 0 2.75-1.233 2.75-2.75v-5.333H2zm6.2 2.75h1.6v1.6H8.2zm4.8 0h1.6v1.6H13z"/>
-        </svg>
-        Play on Itch.io
-      </a>
+    <div class="modal-footer" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+      ${actionButtonsHtml}
     </div>
   `;
 
@@ -180,6 +242,7 @@ function closeProjectModal(event) {
     document.getElementById("modal-body").innerHTML = "";
   }
 }
+
 function toggleMoreProjects() {
   const moreProjects = document.getElementById("more-projects");
   const toggleBtn = document.getElementById("toggle-projects-btn");
