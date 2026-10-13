@@ -4,7 +4,7 @@ const projectsDetails = {
     title: "Odossea",
     role: "Level Designer & Game Designer",
     award: " Best Technology Award – 9th Gran CITM Game Jam",
-    trailerEmbedUrl: "https://www.youtube.com/embed/eQ3rLHv5RtA",
+    videoSrc: "vid/Odossea.mp4",
     teamSize: "5",
     devTime: "1 week",
     techStack: "Unity (C#)",
@@ -26,7 +26,7 @@ const projectsDetails = {
   paraulesMagiques: {
     title: "Paraules Màgiques",
     role: "UI/UX Designer",
-    trailerEmbedUrl: "https://www.youtube.com/embed/4wju0iSo_dE",
+    videoSrc: "vid/ParaulesMagiques.mp4",
     coverImg: "img/PM/Titol.png",
     teamSize: "3",
     devTime: "1 month",
@@ -48,7 +48,7 @@ const projectsDetails = {
     title: "Son of Ithaca",
     role: "3D Artist & Level Designer",
     award: " Nominee: Best Academic Game – IndieDevDay / SAGA Game Fest 2026",
-    trailerEmbedUrl: "https://www.youtube.com/embed/PYzuc0fsHpM",
+    videoSrc: "vid/SonOfIthaca.mp4",
     teamSize: "31",
     devTime: "4 months",
     techStack: "Wave Engine (Own Engine)",
@@ -68,7 +68,7 @@ const projectsDetails = {
   medievalTavern: {
     title: "Medieval Tavern Environment",
     role: "Project Lead & Environment Artist",
-    trailerEmbedUrl: "https://www.youtube.com/embed/N50aYECaGnc",
+    videoSrc: "vid/Taverna.mp4",
     teamSize: "4",
     devTime: "3 weeks",
     techStack: "Maya, ZBrush, Substance Painter, Unity",
@@ -88,6 +88,26 @@ const projectsDetails = {
     ],
    
     artstationLink: "https://www.artstation.com/artwork/1NGo48"
+  },
+
+  kimsUnderworld: {
+    title: "Kim's Underworld",
+    role: "Level Designer",
+    videoSrc: "vid/KimsUnderworld.mp4",
+    teamSize: "19",
+    devTime: "4 months",
+    techStack: "C++ (SDL 2, Raylib), XML",
+    contributions: [
+      "Designed and blocked out 2D level layouts focusing on pacing, enemy encounters, and player navigation.",
+      "Structured and balanced level progression and entity placement using XML data pipelines.",
+      "Collaborated closely with gameplay programmers to tune combat spaces, camera bounds, and collision zones in custom C++ engines.",
+      "Iterated on puzzle and platforming mechanics based on playtesting feedback."
+    ],
+    team: [
+      { name: "Martí Mira", role: "Level Designer" },
+      { name: "Development Team", role: "Production, Art & Programming" }
+    ],
+    itchioLink: "https://mmiraa15.itch.io/kims-underworld" // Sustituye por tu enlace real de Itch.io
   }
 };
 
@@ -95,9 +115,18 @@ function openProjectModal(projectId) {
   const project = projectsDetails[projectId];
   if (!project) return;
 
-  // 1. Multimèdia (Tràiler o imatge de capçalera)
+  // 1. Multimèdia (Vídeo local natiu, tràiler incrustat o imatge fixa)
   let mediaHtml = "";
-  if (project.trailerEmbedUrl) {
+  if (project.videoSrc) {
+    mediaHtml = `
+      <div class="modal-video-container">
+        <video controls playsinline preload="metadata" class="modal-video-player" style="width: 100%; border-radius: 8px; display: block;">
+          <source src="${project.videoSrc}" type="video/mp4">
+          El teu navegador no suporta la reproducció de vídeo.
+        </video>
+      </div>
+    `;
+  } else if (project.trailerEmbedUrl) {
     mediaHtml = `
       <div class="modal-video-container">
         <iframe 
@@ -254,3 +283,34 @@ function toggleMoreProjects() {
     toggleBtn.textContent = "View All Projects";
   }
 }
+// ==========================================================================
+// PREVISUALITZACIÓ DE VÍDEO AL PASSAR EL RATOLÍ (HOVER)
+// ==========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const projectCards = document.querySelectorAll(".project-card");
+
+  projectCards.forEach(card => {
+    const video = card.querySelector(".project-card-video");
+    if (!video) return;
+
+    // Assegura per codi que el vídeo està silenciat (requisit indispensable dels navegadors)
+    video.muted = true;
+    video.defaultMuted = true;
+
+    card.addEventListener("mouseenter", () => {
+      video.muted = true;
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.warn("Reproducció cancel·lada o bloquejada:", error);
+        });
+      }
+    });
+
+    card.addEventListener("mouseleave", () => {
+      video.pause();
+      video.currentTime = 0; // Torna al principi
+    });
+  });
+});

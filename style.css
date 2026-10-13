@@ -89,12 +89,12 @@ body {
 }
 
 .hero h1 span {
-  color: var(--color-muted);
+  color: var(--color-dark);
 }
 
 .hero p {
   font-size: 1.15rem;
-  color: var(--color-muted);
+  color: var(--color-dark);
   max-width: 600px;
   margin: 0 auto 2rem;
 }
@@ -244,9 +244,6 @@ body {
   animation: scroll-loop 30s linear infinite;
 }
 
-.skills-carousel:hover .skills-track {
-  animation-play-state: paused;
-}
 
 .skill-card {
   min-width: 120px;
@@ -323,16 +320,42 @@ body {
 .project-img-wrapper {
   position: relative;
   width: 100%;
-  height: 140px;
+  aspect-ratio: 16 / 9; /* Proporció panoràmica de vídeo en lloc d'alçada fixa */
   overflow: hidden;
-  background-color: var(--color-secondary); /* Fons segons la paleta */
+  background-color: var(--color-dark);
 }
 
 .project-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 2; /* Assegura que el vídeo quedi per sobre de la imatge */
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Efecte en passar el ratolí per sobre de la targeta */
+.project-card:hover .project-img {
+  opacity: 0; /* S'amaga la imatge de portada */
+  transform: scale(1.02);
+}
+
+.project-card:hover .project-card-video {
+  opacity: 1; /* Es fa visible el tràiler */
 }
 
 .project-card:hover .project-img {
@@ -527,11 +550,9 @@ body {
 }
 
 .modal-video-container {
-  position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
+  margin: 1.2rem 0;
+  border-radius: 10px;
   overflow: hidden;
   background-color: #000;
 }
