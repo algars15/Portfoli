@@ -86,7 +86,12 @@ const projectsDetails = {
       { src: "img/tavern/cap3.png", caption: "Main Hall" }
 
     ],
-   
+   team: [
+      { name: "Martí Mira", role: "Lead 3D Artist" },
+      { name: "Marc Blánquez", role: "3D Artist & Programmer" },
+      { name: "Arnau Balasch", role: "3D Artist" },
+      { name: "Manel Montes", role: "3D Artist" }
+    ],
     artstationLink: "https://www.artstation.com/artwork/1NGo48"
   },
 
@@ -104,8 +109,7 @@ const projectsDetails = {
       "Iterated on puzzle and platforming mechanics based on playtesting feedback."
     ],
     team: [
-      { name: "Martí Mira", role: "Level Designer" },
-      { name: "Development Team", role: "Production, Art & Programming" }
+      { name: "EVER REST GAMES", role: "Production, Art & Programming" }
     ],
     itchioLink: "https://mmiraa15.itch.io/kims-underworld" // Sustituye por tu enlace real de Itch.io
   }
