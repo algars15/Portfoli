@@ -80,10 +80,10 @@ const projectsDetails = {
       "Curated external assets and integrated decorative artwork into the environment."
     ],
     gallery: [
-      { src: "img/Tavern/cap1.png", caption: "Main Hall from above" },
-      { src: "img/Tavern/cap2.png", caption: "Bar Counter" },
-      { src: "img/Tavern/cap4.png", caption: "Tavern wine cellar" },
-      { src: "img/Tavern/cap3.png", caption: "Main Hall" }
+      { src: "img/tavern/cap1.png", caption: "Main Hall from above" },
+      { src: "img/tavern/cap2.png", caption: "Bar Counter" },
+      { src: "img/tavern/cap4.png", caption: "Tavern wine cellar" },
+      { src: "img/tavern/cap3.png", caption: "Main Hall" }
 
     ],
    
