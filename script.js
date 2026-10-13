@@ -60,7 +60,6 @@ const projectsDetails = {
       "Designed UI gameplay elements, including the health bar interface for the final boss encounter."
     ],
     team: [
-      { name: "Martí Mira", role: "3D Artist & Level Design" },
       { name: "Nobody Games Studio", role: "Development & Production" }
     ],
     itchioLink: "https://nobody-games-studio.itch.io/son-of-ithaca"
