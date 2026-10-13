@@ -130,12 +130,54 @@
   <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="grid-projectes">
-      <!-- Project Card 1 -->
-      <div class="card">
-        <h3>Project 1</h3>
-        <p>Short description of the project you built or are currently working on.</p>
-        <a href="#" target="_blank">View Code</a>
+
+
+     <!-- Odossea Project Card -->
+<article class="project-card" onclick="openProjectModal('odossea')">
+  <div class="project-img-wrapper">
+    <img src="img/Odossea/portada updated.png" alt="Odossea" class="project-img">
+    <span class="project-badge">Itch.io</span>
+  </div>
+  <div class="project-content">
+    <h3>Odossea</h3>
+
+    <!-- Insígnia del premi amb la imatge del CITM -->
+    <div class="project-award-card">
+      <img src="img/citm game jam.png" alt="CITM Game Jam" class="award-logo">
+      <div class="award-text">
+        <span class="award-badge-title"> Best Technology Award</span>
+        <span class="award-event">9th Gran CITM Game Jam</span>
       </div>
+    </div>
+
+    <!-- De què va el joc (Overview breu) -->
+    <p class="project-desc">
+      A puzzle-platformer where players manipulate shapes and gravity to navigate challenging environments and solve cooperative mechanics.
+    </p>
+
+    <div class="project-footer">
+      <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('odossea')">
+        View Project
+      </button>
+    </div>
+  </div>
+</article>
+
+<!-- =========================================
+       MODAL DE DETALLES DEL PROYECTO
+       ========================================= -->
+  <div id="project-modal" class="modal-overlay" onclick="closeProjectModal(event)">
+    <div class="modal-container" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeProjectModal()">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
       <!-- Project Card 2 -->
       <div class="card">
         <h3>Project 2</h3>
