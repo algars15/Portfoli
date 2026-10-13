@@ -126,3 +126,84 @@ footer {
   color: #888;
   font-size: 0.9rem;
 }
+/* Contenidor exterior que talla el desbordament i afegeix un degradat suau als laterals */
+.skills-carousel {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 1.5rem;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* La pista que es mou contínuament */
+.skills-track {
+  display: flex;
+  width: max-content;
+  gap: 1.5rem;
+  animation: scroll-loop 30s linear infinite;
+}
+
+/* Pausa l'animació si l'usuari posa el cursor per sobre */
+.skills-carousel:hover .skills-track {
+  animation-play-state: paused;
+}
+
+/* Les targetes de cada programa */
+.skill-card {
+  min-width: 120px;
+  background: #ffffff;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  user-select: none;
+}
+
+.skill-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.skill-card p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* Definició de l'animació infinita */
+@keyframes scroll-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Es desplaça exactament el 50% (la primera meitat) */
+    transform: translateX(calc(-50% - 0.75rem));
+  }
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.skill-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.skill-card p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #444;
+  margin: 0;
+}

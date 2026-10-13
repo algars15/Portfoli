@@ -1,66 +1,159 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Meu Portfoli</title>
+  <title>Martí Mira - Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Barra de navegació -->
+  <!-- Navigation Bar -->
   <header>
     <nav class="navbar">
       <div class="logo">Martí Mira Vázquez</div>
       <ul class="nav-links">
-        <li><a href="#sobre-mi">Sobre mi</a></li>
-        <li><a href="#projectes">Projectes</a></li>
-        <li><a href="#contacte">Contacte</a></li>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Secció Principal (Hero) -->
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Hola, soc el <span>Martí Mira</span> 👋</h1>
-    <p>Dissenyador i desenvolupador de videojocs / Estudiant / </p>
-    <a href="#projectes" class="btn">Veure projectes</a>
+    <h1>Hi, I'm <span>Martí Mira</span> 👋</h1>
+    <p>Game Designer & Game Developer</p>
+    <a href="#projects" class="btn">View Projects</a>
   </section>
 
-  <!-- Sobre mi -->
-  <section id="sobre-mi" class="section">
-    <h2>Sobre mi</h2>
-    <p>Explica aquí qui ets, què t'agrada fer i quines tecnologies estàs aprenent (HTML, CSS, JavaScript, etc.).</p>
+  <!-- About Me -->
+  <section id="about-me" class="section">
+    <h2>About Me</h2>
+    <p>Briefly describe who you are, your passion for game design and development, and the tools or languages you are learning.</p>
   </section>
 
-  <!-- Projectes -->
-  <section id="projectes" class="section">
-    <h2>Els meus projectes</h2>
-    <div class="grid-projectes">
-      <!-- Targeta de projecte 1 -->
-      <div class="card">
-        <h3>Projecte 1</h3>
-        <p>Breu descripció del projecte que has fet o estàs fent.</p>
-        <a href="#" target="_blank">Veure codi</a>
-      </div>
-      <!-- Targeta de projecte 2 -->
-      <div class="card">
-        <h3>Projecte 2</h3>
-        <p>Una altra descripció interessant.</p>
-        <a href="#" target="_blank">Veure codi</a>
+ <!-- Skills / Tools Carousel -->
+  <section id="skills" class="section">
+    <h2>Skills & Tools</h2>
+    <div class="skills-carousel">
+      <div class="skills-track">
+
+        <!-- 1. Visual Studio -->
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio" class="skill-icon">
+          <p>Visual Studio</p>
+        </div>
+
+        <!-- 2. VS Code -->
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-icon">
+          <p>VS Code</p>
+        </div>
+
+        <!-- 3. Maya -->
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maya/maya-original.svg" alt="Maya" class="skill-icon">
+          <p>Maya</p>
+        </div>
+
+        <!-- 4. ZBrush -->
+        <div class="skill-card">
+          <img src="img/zbrush-logo.png" alt="ZBrush" class="skill-icon">
+          <p>ZBrush</p>
+        </div>
+
+        <!-- 5. Substance Painter -->
+        <div class="skill-card">
+          <img src="img/substance-painter.svg" alt="Substance Painter" class="skill-icon">
+          <p>Substance Painter</p>
+        </div>
+
+        <!-- 6. Photoshop -->
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" class="skill-icon">
+          <p>Photoshop</p>
+        </div>
+
+        <!-- 7. Unity -->
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" class="skill-icon">
+          <p>Unity</p>
+        </div>
+
+        <!-- 8. Unreal Engine -->
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine" class="skill-icon">
+          <p>Unreal</p>
+        </div>
+
+        <!-- CÒPIA EXACTA PER AL BUCLE INFINIT -->
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio" class="skill-icon">
+          <p>Visual Studio</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-icon">
+          <p>VS Code</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maya/maya-original.svg" alt="Maya" class="skill-icon">
+          <p>Maya</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/zbrush.svg" alt="ZBrush" class="skill-icon">
+          <p>ZBrush</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/adobesubstance3dpainter.svg" alt="Substance Painter" class="skill-icon">
+          <p>Substance Painter</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" alt="Photoshop" class="skill-icon">
+          <p>Photoshop</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" class="skill-icon">
+          <p>Unity</p>
+        </div>
+        <div class="skill-card">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine" class="skill-icon">
+          <p>Unreal</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Contacte -->
-  <section id="contacte" class="section">
-    <h2>Contacte</h2>
-    <p>Tens alguna pregunta o vols col·laborar?</p>
-    <p>Correu: <a href="mailto:elteuemail@gmail.com">elteuemail@gmail.com</a></p>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="grid-projectes">
+      <!-- Project Card 1 -->
+      <div class="card">
+        <h3>Project 1</h3>
+        <p>Short description of the project you built or are currently working on.</p>
+        <a href="#" target="_blank">View Code</a>
+      </div>
+      <!-- Project Card 2 -->
+      <div class="card">
+        <h3>Project 2</h3>
+        <p>Another interesting description.</p>
+        <a href="#" target="_blank">View Code</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Have a question or want to work together?</p>
+    <p>Email: <a href="mailto:martiwp05@gmail.com">martiwp05@gmail.com</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2026 Martí Mira</p>
+    <p>&copy; 2026 Martí Mira Vázquez</p>
   </footer>
 
 </body>
