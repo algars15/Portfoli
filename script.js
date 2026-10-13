@@ -6,7 +6,7 @@ const projectsDetails = {
     trailerEmbedUrl: "https://www.youtube.com/embed/eQ3rLHv5RtA",
     // Dades per a la barra inferior
     teamSize: "5",
-    devTime: "Game Jam (48h)", // o el temps real
+    devTime: "1 week", 
     techStack: "Unity (C#)",
     contributions: [
       "Conceptualized and balanced the primary puzzle and movement mechanics.",
