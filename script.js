@@ -3,9 +3,7 @@ const projectsDetails = {
   odossea: {
     title: "Odossea",
     role: "Level Designer & Game Designer",
-    
     trailerEmbedUrl: "https://www.youtube.com/embed/eQ3rLHv5RtA",
-
     contributions: [
       "Conceptualized and balanced the primary puzzle and movement mechanics.",
       "Designed and laid out the level progression across the campaign.",
@@ -17,9 +15,25 @@ const projectsDetails = {
       { name: "Arnau Balasch", role: "2D Artist" },
       { name: "Oscar Alonso", role: "Programmer & Level Designer" },
       { name: "Toni Llovera", role: "UI/UX Designer & Programmer" }
-      // Afegeix o canvia els que facin falta!
     ],
     itchioLink: "https://torratsgames.itch.io/odossea"
+  },
+
+  paraulesMagiques: {
+    title: "Paraules Màgiques",
+    role: "Game Designer & Developer",
+    trailerEmbedUrl: "https://www.youtube.com/embed/4wju0iSo_dE",
+    coverImg: "img/PM/Titol.png",
+    contributions: [
+      "Conceptualized the core educational game flow and dynamic word puzzle progression.",
+      "Designed and structured clean, accessible UI layouts for browser gameplay.",
+      "Implemented responsive HTML5 canvas systems, gameplay feedback, and audio cues."
+    ],
+    team: [
+      { name: "Martí Mira", role: "Game Designer & Developer" },
+      { name: "Torrats Games", role: "Development & Production" }
+    ],
+    itchioLink: "https://mmiraa15.itch.io/paraules-magiques"
   }
 };
 
@@ -27,10 +41,8 @@ function openProjectModal(projectId) {
   const project = projectsDetails[projectId];
   if (!project) return;
 
-  // Decidim com mostrar el tràiler (YouTube o arxiu MP4)
   let mediaHtml = "";
   if (project.trailerEmbedUrl) {
-    // Si és de YouTube
     mediaHtml = `
       <div class="modal-video-container">
         <iframe 
@@ -42,18 +54,13 @@ function openProjectModal(projectId) {
         </iframe>
       </div>
     `;
-  } else if (project.trailerVideoFile) {
-    // Si és un fitxer .mp4 local
+  } else if (project.coverImg) {
     mediaHtml = `
-      <div class="modal-video-container">
-        <video controls>
-          <source src="${project.trailerVideoFile}" type="video/mp4">
-          El teu navegador no suporta el reproductor de vídeo.
-        </video>
-      </div>
+      <img src="${project.coverImg}" alt="${project.title}" class="modal-header-img">
     `;
   }
-  // Generem la llista dels integrants
+
+  // Llista dels integrants
   let teamHtml = "";
   if (project.team && project.team.length > 0) {
     teamHtml = `
@@ -74,8 +81,6 @@ function openProjectModal(projectId) {
     ${mediaHtml}
     <h2 class="modal-title">${project.title}</h2>
     <p class="modal-subtitle"><strong>Role:</strong> ${project.role}</p>
-
-
 
     <h3 class="modal-section-title">My Key Contributions</h3>
     <ul class="modal-list">

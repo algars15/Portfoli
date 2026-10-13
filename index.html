@@ -23,16 +23,26 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Hi, I'm <span>Martí Mira</span> 👋</h1>
+    <h1>Hi, I'm <span>Martí Mira</span> </h1>
     <p>Game Designer & Game Developer</p>
     <a href="#projects" class="btn">View Projects</a>
   </section>
 
-  <!-- About Me -->
-  <section id="about-me" class="section">
-    <h2>About Me</h2>
-    <p>Briefly describe who you are, your passion for game design and development, and the tools or languages you are learning.</p>
-  </section>
+ <!-- About Me Section -->
+<section id="about" class="section about-section">
+  <h2>About Me</h2>
+  <div class="about-text">
+    <p>
+      My name is <strong>Martí Mira</strong>, and I am currently a fourth-year student pursuing a Bachelor's Degree in Video Game Design and Development.
+    </p>
+    <p>
+      I am an organized, responsible professional who thrives in collaborative team environments. Proactive by nature, I enjoy contributing fresh ideas and developing creative, effective solutions to design and production challenges.
+    </p>
+    <p>
+      I am eager to continue learning within a professional studio setting, contribute directly to high-quality projects, and further advance my skills within the video game industry.
+    </p>
+  </div>
+</section>
 
  <!-- Skills / Tools Carousel -->
   <section id="skills" class="section">
@@ -152,7 +162,9 @@
 
     <!-- De què va el joc (Overview breu) -->
     <p class="project-desc">
-      A puzzle-platformer where players manipulate shapes and gravity to navigate challenging environments and solve cooperative mechanics.
+      A physics-driven cooperative puzzle-platformer centered around character-splitting mechanics. 
+      Players must coordinate actions, leverage unique individual properties, 
+      and synchronize movements to navigate complex level hazards and complete their collaborative journey.
     </p>
 
     <div class="project-footer">
@@ -178,13 +190,24 @@
 </html>
 
 
-      <!-- Project Card 2 -->
-      <div class="card">
-        <h3>Project 2</h3>
-        <p>Another interesting description.</p>
-        <a href="#" target="_blank">View Code</a>
-      </div>
+ <!-- Paraules Màgiques Project Card -->
+<article class="project-card" onclick="openProjectModal('paraulesMagiques')">
+  <div class="project-img-wrapper">
+    <img src="img/PM/Titol.png" alt="Paraules Màgiques" class="project-img">
+    <span class="project-badge">Itch.io</span>
+  </div>
+  <div class="project-content">
+    <h3>Paraules Màgiques</h3>
+    <p class="project-desc">
+      An educational HTML5 browser game. Players help the character find lost mice by solving spelling and letter deduction challenges.
+    </p>
+    <div class="project-footer">
+      <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('paraulesMagiques')">
+        View Project
+      </button>
     </div>
+  </div>
+</article>
   </section>
 
   <!-- Contact -->
