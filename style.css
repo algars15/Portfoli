@@ -348,10 +348,14 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* Efecte en passar el ratolí per sobre de la targeta */
-.project-card:hover .project-img {
-  opacity: 0; /* S'amaga la imatge de portada */
-  transform: scale(1.02);
+project-card:has(.project-card-video):hover .project-img {
+  opacity: 0;
+}
+
+/* Opcional: si vols que a la taverna la imatge faci un lleuger zoom elegant sense posar-se negra */
+.project-card:not(:has(.project-card-video)):hover .project-img {
+  opacity: 1;
+  transform: scale(1.03);
 }
 
 .project-card:hover .project-card-video {
