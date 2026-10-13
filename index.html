@@ -150,6 +150,35 @@
 
     <!-- Graella dels 3 Projectes Principals -->
     <div class="grid-projectes">
+        <!-- 3. Son of Ithaca Project Card -->
+      <article class="project-card" onclick="openProjectModal('sonOfIthaca')">
+        <div class="project-img-wrapper">
+          <img src="img/SonOfithaca/logo.png" alt="Son of Ithaca" class="project-img">
+          <span class="project-badge">GAME</span>
+        </div>
+        <div class="project-content">
+          <h3>Son of Ithaca</h3>
+
+          <!-- Insígnia de la nominació -->
+          <div class="project-award-card">
+                <img src="img/indie dev day.png" alt="IndieDevDay" class="award-logo">            
+                <div class="award-text">
+              <span class="award-badge-title"> Nominee: Best Academic Game</span>
+              <span class="award-event">IndieDevDay · SAGA Game Fest 2026</span>
+            </div>
+          </div>
+
+          <p class="project-desc">
+            A 3D action-adventure game based on The Odyssey. Players embark on a mythical journey across uncharted islands, exploring dungeons and solving puzzles to rescue Odysseus.
+          </p>
+
+          <div class="project-footer">
+            <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('sonOfIthaca')">
+              View Project
+            </button>
+          </div>
+        </div>
+      </article>
 
       <!-- 1. Odossea Project Card -->
       <article class="project-card" onclick="openProjectModal('odossea')">
@@ -205,35 +234,7 @@
         </div>
       </article>
 
-     <!-- 3. Son of Ithaca Project Card -->
-      <article class="project-card" onclick="openProjectModal('sonOfIthaca')">
-        <div class="project-img-wrapper">
-          <img src="img/SonOfithaca/logo.png" alt="Son of Ithaca" class="project-img">
-          <span class="project-badge">GAME</span>
-        </div>
-        <div class="project-content">
-          <h3>Son of Ithaca</h3>
-
-          <!-- Insígnia de la nominació -->
-          <div class="project-award-card">
-                <img src="img/indie dev day.png" alt="IndieDevDay" class="award-logo">            
-                <div class="award-text">
-              <span class="award-badge-title"> Nominee: Best Academic Game</span>
-              <span class="award-event">IndieDevDay · SAGA Game Fest 2026</span>
-            </div>
-          </div>
-
-          <p class="project-desc">
-            A 3D action-adventure game based on The Odyssey. Players embark on a mythical journey across uncharted islands, exploring dungeons and solving puzzles to rescue Odysseus.
-          </p>
-
-          <div class="project-footer">
-            <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('sonOfIthaca')">
-              View Project
-            </button>
-          </div>
-        </div>
-      </article>
+     
 
     </div><!-- Fi de grid-projectes principal -->
 
