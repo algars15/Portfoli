@@ -32,15 +32,17 @@
 <section id="about" class="section about-section">
   <h2>About Me</h2>
   <div class="about-text">
-    <p>
-      My name is <strong>Martí Mira</strong>, and I am currently a fourth-year student pursuing a Bachelor's Degree in Video Game Design and Development.
-    </p>
-    <p>
-      I am an organized, responsible professional who thrives in collaborative team environments. Proactive by nature, I enjoy contributing fresh ideas and developing creative, effective solutions to design and production challenges.
-    </p>
-    <p>
-      I am eager to continue learning within a professional studio setting, contribute directly to high-quality projects, and further advance my skills within the video game industry.
-    </p>
+    <p class="about-lead">
+  Video Game Design and Development student specializing in <strong>3D Art and Technical Level Design</strong>.
+</p>
+
+<p>
+  On the artistic side, my focus is on sculpting, high-to-low poly workflows, and PBR texturing to create cohesive, game-ready assets. On the engine side, I bridge art and gameplay by assembling levels, configuring shaders and materials, and implementing mechanics directly in <strong>Unity and Unreal Engine</strong>.
+</p>
+
+<p>
+  I possess extensive, demonstrable experience across <strong>Autodesk Maya, ZBrush, Substance 3D Painter, and Photoshop</strong>. I am seeking to apply my skills in a professional studio environment where I can contribute to ambitious productions and continue growing as a 3D artist.
+</p>
   </div>
 </section>
 
@@ -136,46 +138,134 @@
     </div>
   </section>
 
-  <!-- Projects -->
+<!-- Projects Section -->
   <section id="projects" class="section">
     <h2>Projects</h2>
+
+    <!-- Graella dels 3 Projectes Principals -->
     <div class="grid-projectes">
 
+      <!-- 1. Odossea Project Card -->
+      <article class="project-card" onclick="openProjectModal('odossea')">
+        <div class="project-img-wrapper">
+          <img src="img/Odossea/portada updated.png" alt="Odossea" class="project-img">
+          <span class="project-badge">GAME</span>
+        </div>
+        <div class="project-content">
+          <h3>Odossea</h3>
 
-     <!-- Odossea Project Card -->
-<article class="project-card" onclick="openProjectModal('odossea')">
-  <div class="project-img-wrapper">
-    <img src="img/Odossea/portada updated.png" alt="Odossea" class="project-img">
-    <span class="project-badge">Itch.io</span>
-  </div>
-  <div class="project-content">
-    <h3>Odossea</h3>
+          <!-- Insígnia del premi amb la imatge del CITM -->
+          <div class="project-award-card">
+            <img src="img/citm game jam.png" alt="CITM Game Jam" class="award-logo">
+            <div class="award-text">
+              <span class="award-badge-title">Best Technology Award</span>
+              <span class="award-event">9th Gran CITM Game Jam</span>
+            </div>
+          </div>
 
-    <!-- Insígnia del premi amb la imatge del CITM -->
-    <div class="project-award-card">
-      <img src="img/citm game jam.png" alt="CITM Game Jam" class="award-logo">
-      <div class="award-text">
-        <span class="award-badge-title"> Best Technology Award</span>
-        <span class="award-event">9th Gran CITM Game Jam</span>
-      </div>
+          <!-- De què va el joc -->
+          <p class="project-desc">
+            A physics-driven cooperative puzzle-platformer centered around character-splitting mechanics. 
+            Players must coordinate actions, leverage unique individual properties, 
+            and synchronize movements to navigate complex level hazards and complete their collaborative journey.
+          </p>
+
+          <div class="project-footer">
+            <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('odossea')">
+              View Project
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. Paraules Màgiques Project Card -->
+      <article class="project-card" onclick="openProjectModal('paraulesMagiques')">
+        <div class="project-img-wrapper">
+          <img src="img/PM/Titol.png" alt="Paraules Màgiques" class="project-img">
+          <span class="project-badge">GAME</span>
+        </div>
+        <div class="project-content">
+          <h3>Paraules Màgiques</h3>
+          <p class="project-desc">
+            Paraules Màgiques is an educational children's game created by Torrats Games where you help the Bruixa Avorrida find her lost mice. 
+            Drag the correct letters to form words, use the owl's hints if you get stuck, and beat three difficulty levels. 
+            Furthermore, you can unlock a time trial mode to test your mental agility and vocabulary.
+          </p>
+          <div class="project-footer">
+            <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('paraulesMagiques')">
+              View Project
+            </button>
+          </div>
+        </div>
+      </article>
+
+     <!-- 3. Son of Ithaca Project Card -->
+      <article class="project-card" onclick="openProjectModal('sonOfIthaca')">
+        <div class="project-img-wrapper">
+          <img src="img/SonOfithaca/logo.png" alt="Son of Ithaca" class="project-img">
+          <span class="project-badge">GAME</span>
+        </div>
+        <div class="project-content">
+          <h3>Son of Ithaca</h3>
+
+          <!-- Insígnia de la nominació -->
+          <div class="project-award-card">
+                <img src="img/indie dev day.png" alt="IndieDevDay" class="award-logo">            
+                <div class="award-text">
+              <span class="award-badge-title"> Nominee: Best Academic Game</span>
+              <span class="award-event">IndieDevDay · SAGA Game Fest 2026</span>
+            </div>
+          </div>
+
+          <p class="project-desc">
+            A 3D action-adventure game based on The Odyssey. Players embark on a mythical journey across uncharted islands, exploring dungeons and solving puzzles to rescue Odysseus.
+          </p>
+
+          <div class="project-footer">
+            <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('sonOfIthaca')">
+              View Project
+            </button>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- Fi de grid-projectes principal -->
+
+    <!-- Graella de projectes secundaris (amagat inicialment) -->
+    <div id="more-projects" class="grid-projectes more-projects-container" style="display: none;">
+      
+      <!-- Exemple de projecte addicional -->
+      <article class="project-card" onclick="openProjectModal('projecte4')">
+        <div class="project-img-wrapper">
+          <img src="img/Projecte4/portada.png" alt="Projecte 4" class="project-img">
+          <span class="project-badge">Game Jam</span>
+        </div>
+        <div class="project-content">
+          <h3>Projecte 4</h3>
+          <p class="project-desc">
+            Experimental gameplay prototype and level design developed during a short development sprint.
+          </p>
+          <div class="project-footer">
+            <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('projecte4')">
+              View Project
+            </button>
+          </div>
+        </div>
+      </article>
+
     </div>
 
-    <!-- De què va el joc (Overview breu) -->
-    <p class="project-desc">
-      A physics-driven cooperative puzzle-platformer centered around character-splitting mechanics. 
-      Players must coordinate actions, leverage unique individual properties, 
-      and synchronize movements to navigate complex level hazards and complete their collaborative journey.
-    </p>
-
-    <div class="project-footer">
-      <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('odossea')">
-        View Project
+    <!-- Botó per desplegar / plegar -->
+    <div class="projects-toggle-wrapper">
+      <button id="toggle-projects-btn" class="btn-secondary" onclick="toggleMoreProjects()">
+        View All Projects
       </button>
     </div>
-  </div>
-</article>
 
-<!-- =========================================
+  </section>
+
+
+  <!-- =========================================
        MODAL DE DETALLES DEL PROYECTO
        ========================================= -->
   <div id="project-modal" class="modal-overlay" onclick="closeProjectModal(event)">
@@ -188,28 +278,6 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
- <!-- Paraules Màgiques Project Card -->
-<article class="project-card" onclick="openProjectModal('paraulesMagiques')">
-  <div class="project-img-wrapper">
-    <img src="img/PM/Titol.png" alt="Paraules Màgiques" class="project-img">
-    <span class="project-badge">Itch.io</span>
-  </div>
-  <div class="project-content">
-    <h3>Paraules Màgiques</h3>
-    <p class="project-desc">
-      An educational HTML5 browser game. Players help the character find lost mice by solving spelling and letter deduction challenges.
-    </p>
-    <div class="project-footer">
-      <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('paraulesMagiques')">
-        View Project
-      </button>
-    </div>
-  </div>
-</article>
-  </section>
-
   <!-- Contact -->
   <section id="contact" class="section">
     <h2>Contact</h2>
