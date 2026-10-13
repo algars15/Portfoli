@@ -11,7 +11,7 @@ const projectsDetails = {
     ],
     team: [
       { name: "Martí Mira", role: "Level Designer & Game Designer" },
-      { name: "Marc Blánquez", role: "Lead Programmer" },
+      { name: "Marc Blànquez", role: "Lead Programmer" },
       { name: "Arnau Balasch", role: "2D Artist" },
       { name: "Oscar Alonso", role: "Programmer & Level Designer" },
       { name: "Toni Llovera", role: "UI/UX Designer & Programmer" }
@@ -21,7 +21,7 @@ const projectsDetails = {
 
   paraulesMagiques: {
     title: "Paraules Màgiques",
-    role: "Game Designer & Developer",
+    role: "UI/UX Designer",
     trailerEmbedUrl: "https://www.youtube.com/embed/4wju0iSo_dE",
     coverImg: "img/PM/Titol.png",
     contributions: [
@@ -30,8 +30,9 @@ const projectsDetails = {
       "Implemented responsive HTML5 canvas systems, gameplay feedback, and audio cues."
     ],
     team: [
-      { name: "Martí Mira", role: "Game Designer & Developer" },
-      { name: "Torrats Games", role: "Development & Production" }
+      { name: "Martí Mira", role: "UI/UX Designer" },
+      { name: "Marc Blànquez", role: "Lead Programmer" },
+      { name: "Arnau Balasch", role: "2D Artist" }
     ],
     itchioLink: "https://mmiraa15.itch.io/paraules-magiques"
   }
