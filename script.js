@@ -14,11 +14,11 @@ const projectsDetails = {
       "Programmed core player logic and implemented scene workflows directly in Unity."
     ],
     team: [
-      { name: "Martí Mira", role: "Level Designer & Game Designer" },
-      { name: "Marc Blánquez", role: "Lead Programmer" },
+      { name: "Martí Mira", role: "Level Designer & UI/UX Designer" },
+      { name: "Marc Blánquez", role: "Programmer" },
       { name: "Arnau Balasch", role: "2D Artist" },
       { name: "Oscar Alonso", role: "Programmer & Level Designer" },
-      { name: "Toni Llovera", role: "UI/UX Designer & Programmer" }
+      { name: "Toni Llovera", role: "UI/UX Programmer & Programmer" }
     ],
     itchioLink: "https://torratsgames.itch.io/odossea"
   },
@@ -38,7 +38,7 @@ const projectsDetails = {
     ],
     team: [
       { name: "Martí Mira", role: "UI/UX Designer" },
-      { name: "Marc Blánquez", role: "Lead Programmer" },
+      { name: "Marc Blánquez", role: "Programmer" },
       { name: "Arnau Balasch", role: "2D Artist" }
     ],
     itchioLink: "https://mmiraa15.itch.io/paraules-magiques"
@@ -130,7 +130,7 @@ const projectsDetails = {
     team: [
       { name: "Martí Mira", role: "UI/UX Designer & Programmer" },
       { name: "Arnau Balasch", role: "UI/UX Designer & Programmer" },
-      { name: "Marc Blànquez", role: "Lead Programmer" },
+      { name: "Marc Blánquez", role: "Lead Programmer" },
       { name: "Manel Montes", role:  "UI/UX Designer & Programmer" },
       { name: "Saüc Pellejero",role: "UI/UX Designer & Programmer" },
     ],
