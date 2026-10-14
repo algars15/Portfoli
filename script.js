@@ -9,8 +9,8 @@ const projectsDetails = {
     devTime: "1 week",
     techStack: "Unity (C#)",
     contributions: [
-      "Conceptualized and balanced the primary puzzle and movement mechanics.",
-      "Designed and laid out the level progression across the campaign.",
+      "Conceptualized, prototyped, and fine-tuned the primary puzzle and movement mechanics to establish a smooth, intuitive gameplay loop.",
+      "Designed the overall level progression and campaign pacing from initial whiteboxing to final polish. Focused on clear player guidance through visual hierarchy, lighting, and environmental signposting, while structuring dynamic pacing and gradually escalating puzzle complexity.",
       "Programmed core player logic and implemented scene workflows directly in Unity."
     ],
     team: [
