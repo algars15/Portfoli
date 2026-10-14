@@ -222,7 +222,7 @@ header {
 }
 
 .about-hero-desc strong {
-  color: var(--color-accent); 
+  color: var(--color-secondary); 
 }
 
 .about-hero-image-wrapper {
@@ -240,6 +240,94 @@ header {
   border-radius: 20px; 
   background-color: var(--color-secondary); 
   display: block;
+}
+/* GAIXETA DE DADES COMPLEMENTÀRIES */
+.about-meta-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-top: 0.4rem;
+  padding: 0.9rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 8px 8px 0;
+}
+
+.about-meta-item {
+  font-size: 0.92rem;
+  color: #c7d2d4;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.about-meta-item .meta-label {
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.about-meta-item .meta-val {
+  color: #e2e8f0;
+}
+
+/* BOTONS D'ACCIÓ ABOUT ME */
+.about-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.8rem;
+}
+
+.btn-about {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+/* Botó Email */
+.btn-about-email {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--bg-main);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-about-email:hover {
+  background-color: rgba(255, 255, 255, 0.16);
+  border-color: var(--bg-main);
+  transform: translateY(-2px);
+}
+
+/* Botó Descarregar CV */
+.btn-about-cv {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  border: 1px solid var(--color-secondary);
+}
+
+.btn-about-cv:hover {
+  background-color: #d99b38;
+  border-color: #d99b38;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 152, 133, 0.35);
+}
+
+/* Adaptació mòbil */
+@media (max-width: 600px) {
+  .about-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-about {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* ==========================================================================
@@ -582,9 +670,9 @@ header {
 
 .project-award-badge {
   display: inline-block;
-  background-color: var(--color-accent);
-  color: var(--color-dark);
-  border: 1px solid rgba(91, 118, 123, 0.25);
+  background-color: #fffbeb;
+  color: #92400e;
+  border: 1px solid #e9c32c;
   padding: 0.35rem 0.75rem;
   border-radius: 6px;
   font-size: 0.82rem;
