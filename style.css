@@ -2,15 +2,16 @@
    1. PALETA DE COLORS I VARIABLES
    ========================================================================== */
 :root {
-  --bg-main: #fcfcf8;          /* Fons general clar i net */
-  --bg-card: #ffffff;          /* Fons de targetes */
-  --color-secondary: #efebfa;  /* To lavanda suau per a contrasts i fons secundaris */
-  --color-accent: #f1ffe0;     /* To verd clar suau per a badges i detalls */
-  --color-muted: #5b767b;      /* Blau-verd pissarra per a subtítols i textos secundaris */
-  --color-dark: #0a0a0a;       /* Negre intens per a titulars i contrast fort */
-  --border-color: #e2e4e8;     /* Vores fines i elegants */
-  --shadow-sm: 0 2px 4px rgba(10, 10, 10, 0.04);
-  --shadow-md: 0 8px 20px rgba(10, 10, 10, 0.08);
+  --bg-main: #f2e9e4;          /* Fons càlid clar (Lli) */
+  --bg-card: #ffffff;          /* Fons net per a les targetes de projectes */
+  --color-secondary: #edae49;  /* Mostassa per a fons d'informació i premis */
+  --color-accent: #7c9885;     /* Verd sàlvia per a la barra activa i detalls */
+  --color-cta: #d1495b;        /* Vermell robí per a botons i crides a l'acció */
+  --color-dark: #2d3142;       /* Blau fosc intens per a títols i targeta About */
+  --color-muted: #5c627a;      /* To fosc suau per a subtítols i paràgrafs */
+  --border-color: #ded3cc;     /* Vores fines en harmonia amb el fons lli */
+  --shadow-sm: 0 2px 4px rgba(45, 49, 66, 0.05);
+  --shadow-md: 0 8px 24px rgba(45, 49, 66, 0.10);
 }
 
 /* ==========================================================================
