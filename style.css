@@ -89,6 +89,33 @@ header {
   background-color: rgba(0, 188, 212, 0.12);
   border-bottom: 3px solid #00bcd4;
 }
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.logo-link:hover .nav-logo {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.45));
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+  color: var(--color-dark);
+}
 
 /* ==========================================================================
    4. SECCIÓ HERO
