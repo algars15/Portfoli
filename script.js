@@ -117,14 +117,16 @@ const projectsDetails = {
   racingGame: {
     title: "Racing Game",
     role: "UI/UX Designer & Programmer",
+    videoSrc: "vid/Racing-Game.mp4",
     coverImg: "img/racing.png", 
     teamSize: "5",
     devTime: "3 months",
     techStack: "C++ (Raylib, Box2D)",
     contributions: [
-      "Designed and implemented clean, responsive in-game UI layouts and HUD elements.",
-      "Implemented chekpoints ans collisions.",
-      ],
+      "Designed and implemented clean, responsive in-game UI layouts and real-time HUD elements (speedometer, lap timer, and race indicators) optimized for fast readability.",
+      "Programmed a sequential checkpoint tracking system using Box2D sensors to manage lap completion, split times, and race progression accurately.",
+      "Engineered vehicle-environment collision responses and tuned physical properties (friction, restitution, and track boundaries) in Box2D for responsive arcade handling."
+    ],
     team: [
       { name: "Martí Mira", role: "UI/UX Designer & Programmer" },
       { name: "Arnau Balasch", role: "UI/UX Designer & Programmer" },
