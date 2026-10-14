@@ -111,7 +111,28 @@ const projectsDetails = {
     team: [
       { name: "EVER REST GAMES", role: "Production, Art & Programming" }
     ],
-    itchioLink: "https://mmiraa15.itch.io/kims-underworld" // Sustituye por tu enlace real de Itch.io
+    itchioLink: "https://mmiraa15.itch.io/kims-underworld" 
+  },
+
+  racingGame: {
+    title: "Racing Game",
+    role: "UI/UX Designer & Programmer",
+    coverImg: "img/racing.png", 
+    teamSize: "5",
+    devTime: "3 months",
+    techStack: "C++ (Raylib, Box2D)",
+    contributions: [
+      "Designed and implemented clean, responsive in-game UI layouts and HUD elements.",
+      "Implemented chekpoints ans collisions.",
+      ],
+    team: [
+      { name: "Martí Mira", role: "UI/UX Designer & Programmer" },
+      { name: "Arnau Balasch", role: "UI/UX Designer & Programmer" },
+      { name: "Marc Blànquez", role: "Lead Programmer" },
+      { name: "Manel Montes", role:  "UI/UX Designer & Programmer" },
+      { name: "Saüc Pellejero",role: "UI/UX Designer & Programmer" },
+    ],
+    itchioLink: "https://mmiraa15.itch.io/racing-game" 
   }
 };
 
@@ -119,7 +140,7 @@ function openProjectModal(projectId) {
   const project = projectsDetails[projectId];
   if (!project) return;
 
-  // 1. Multimèdia (Vídeo local natiu, tràiler incrustat o imatge fixa)
+  // 1. Multimèdia 
   let mediaHtml = "";
   if (project.videoSrc) {
     mediaHtml = `
@@ -200,7 +221,7 @@ function openProjectModal(projectId) {
     `;
   }
 
-  // 4. Galeria d'imatges i breakdowns (si en té)
+  // 4. Galeria d'imatges 
   let galleryHtml = "";
   if (project.gallery && project.gallery.length > 0) {
     galleryHtml = `
@@ -216,7 +237,7 @@ function openProjectModal(projectId) {
     `;
   }
 
-  // 5. Botons d'enllaços externs (Itch.io i/o ArtStation)
+  // 5. Botons d'enllaços externs 
   let actionButtonsHtml = "";
   if (project.itchioLink) {
     actionButtonsHtml += `
@@ -297,7 +318,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const video = card.querySelector(".project-card-video");
     if (!video) return;
 
-    // Assegura per codi que el vídeo està silenciat (requisit indispensable dels navegadors)
     video.muted = true;
     video.defaultMuted = true;
 
@@ -314,7 +334,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     card.addEventListener("mouseleave", () => {
       video.pause();
-      video.currentTime = 0; // Torna al principi
+      video.currentTime = 0; 
     });
   });
 });
