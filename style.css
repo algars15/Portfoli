@@ -596,6 +596,19 @@ header {
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
 }
+.btn-about-build {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border: 1px solid var(--color-secondary);
+  transition: all 0.25s ease;
+}
+
+.btn-about-build:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(237, 174, 73, 0.3);
+}
 
 /* ==========================================================================
    9. FINESTRA EMERGENT (MODAL)

@@ -135,7 +135,38 @@ const projectsDetails = {
       { name: "Saüc Pellejero",role: "UI/UX Designer & Programmer" },
     ],
     itchioLink: "https://mmiraa15.itch.io/racing-game" 
-  }
+  },
+
+  godOfWarBlockout: {
+    title: "God of War (2018) – Level Blockout",
+    role: "Level Designer & Blueprint Scripter",
+    trailerEmbedUrl: "https://www.youtube.com/embed/Ck3RebU0pN8", // Sustituye con el ID de tu vídeo de YouTube
+    coverImg: "img/gow-cover.png",
+    teamSize: "2",
+    devTime: "1 month",
+    techStack: "Unreal Engine, Blueprints",
+    contributions: [
+      "Designed and structured the 2D layout establishing the primary Golden Path and rewarding alternate exploration routes paired with a progressive intensity pacing graph.",
+      "Calibrated spatial metrics and environmental scale optimized for over-the-shoulder camera constraints, using vista compositions and landmarks for intuitive player signposting.",
+      "Implemented a strict color-coded greyboxing framework to clearly communicate traversable paths, structural spaces, vertical nodes, and breakable environmental barricades.",
+      "Programmed core mechanics via Blueprints: Leviathan Axe aim, throw, and recall projectile behaviors alongside ladder climb volumes and state transitions."
+    ],
+    gallery: [
+      { src: "img/GOW/Captura 1.png", caption: "Bridge zone"},
+      { src: "img/GOW/Captura 2.png", caption: "Forest Zone" },
+      { src: "img/GOW/Captura 3.png", caption: "Hall Zone" },
+      { src: "img/GOW/layout.png",    caption: "Layout 2D" }
+
+     
+
+    ],
+    team: [
+      { name: "Martí Mira", role: "Level Designer & Blueprint Scripter" },
+      { name: "Marc Blánquez", role: "Level Designer & Blueprint Scripter" }
+    ],
+    pdfLink: "doc/Level Design Document_MartiMira .pdf",
+    buildLink: "https://drive.google.com/file/d/1JwXPFnCHvom1adk0abyI54cSpUwzAbNp/view?usp=sharing"
+  },
 };
 
 function openProjectModal(projectId) {
@@ -258,6 +289,31 @@ function openProjectModal(projectId) {
           <path d="M0 17.723l2.027 3.505h.001a2.424 2.424 0 0 0 2.164 1.332h13.684l-2.585-4.477H0v-.36zm15.66-2.908l-4.707-8.152L6.246 14.815h9.414zm7.986 4.312L16.294 3.018A2.43 2.43 0 0 0 14.184 1.7h-.077a2.428 2.428 0 0 0-2.106 1.258L9.957 6.45l7.653 13.256h4.526a1.21 1.21 0 0 0 1.054-.627 1.22 1.22 0 0 0 .456-1.079z"/>
         </svg>
         View on ArtStation
+      </a>
+    `;
+  }
+  if (project.pdfLink) {
+    actionButtonsHtml += `
+      <a href="${project.pdfLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-view" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+        </svg>
+        <span>View LDD (PDF)</span>
+      </a>
+    `;
+  }
+  if (project.buildLink) {
+    actionButtonsHtml += `
+      <a href="${project.buildLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-itch" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: var(--color-secondary); color: var(--color-dark);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download Build
       </a>
     `;
   }
