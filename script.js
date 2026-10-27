@@ -25,25 +25,25 @@ const projectsDetails = {
     
    uiCaseStudy: [
     {
-      tag: "Design System",
+      
       title: "Vector UI Kit & Scalable Assets",
       desc: "Interactive button states, and audio control components designed with soft pastel gradients for resolution independence.",
       img: "img/Odossea/ui-kit.png"
     },
     {
-      tag: "Information Architecture",
+     
       title: "Menu Hierarchy & Settings Layouts",
       desc: "Structured option panels for Graphics and Audio adjustments, prioritizing intuitive spatial navigation and clear input feedback.",
       img: "img/Odossea/ui-panels.png"
     },
     {
-      tag: "In-Engine Staging",
+     
       title: "In-Game Pause Overlay",
       desc: "Pause menu staged directly against background gameplay environments to maintain high visual contrast and continuous player immersion.",
       img: "img/Odossea/ui-paused-ingame.png"
     },
     {
-      tag: "In-Engine Staging",
+      
       title: "In-Game Options Overlay",
       desc: "Options panel for immediate readability over active gameplay scenes.",
       img: "img/Odossea/ui-options-ingame.png"
@@ -348,7 +348,7 @@ function openProjectModal(projectId) {
 let uiCaseStudyHtml = "";
   if (project.uiCaseStudy && project.uiCaseStudy.length > 0) {
     uiCaseStudyHtml = `
-      <h3 class="modal-section-title">UI/UX</h3>
+      <h3 class="modal-section-title">UI/UX Interactive Showcase</h3>
       <div class="ui-slider-container">
         
         <button class="ui-slider-btn prev" onclick="changeUiSlide(-1)">&larr;</button>
@@ -360,10 +360,9 @@ let uiCaseStudyHtml = "";
 
         <div class="ui-slider-info">
           <div class="ui-slider-meta">
-            <span id="ui-slide-tag" class="ui-pro-badge">${project.uiCaseStudy[0].tag}</span>
+            <h4 id="ui-slide-title" style="margin: 0;">${project.uiCaseStudy[0].title}</h4>
             <span id="ui-slide-counter" class="ui-slide-counter">1 / ${project.uiCaseStudy.length}</span>
           </div>
-          <h4 id="ui-slide-title">${project.uiCaseStudy[0].title}</h4>
           <p id="ui-slide-desc">${project.uiCaseStudy[0].desc}</p>
         </div>
 
@@ -456,10 +455,9 @@ document.addEventListener("DOMContentLoaded", () => {
 let currentUiSlide = 0;
 
 function changeUiSlide(direction) {
-  const modal = document.getElementById("project-modal");
-  // Obtenim el projecte actualment obert a partir de la cerca
   const activeProjectId = Object.keys(projectsDetails).find(id => {
-    return projectsDetails[id].uiCaseStudy && document.getElementById("ui-slide-img");
+    const project = projectsDetails[id];
+    return project.uiCaseStudy && document.getElementById("ui-slide-img");
   });
 
   if (!activeProjectId) return;
@@ -472,7 +470,6 @@ function changeUiSlide(direction) {
   const current = slides[currentUiSlide];
 
   document.getElementById("ui-slide-img").src = current.img;
-  document.getElementById("ui-slide-tag").textContent = current.tag;
   document.getElementById("ui-slide-title").textContent = current.title;
   document.getElementById("ui-slide-desc").textContent = current.desc;
   document.getElementById("ui-slide-counter").textContent = `${currentUiSlide + 1} / ${slides.length}`;
