@@ -365,8 +365,6 @@ header {
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-
-
 .skill-icon {
   width: 48px;
   height: 48px;
@@ -1027,4 +1025,104 @@ header {
     width: 100%;
     justify-content: center;
   }
+}
+/* ==========================================================================
+   UI/UX INTERACTIVE SLIDER SHOWCASE
+   ========================================================================== */
+.ui-slider-container {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.2rem;
+  margin: 1.5rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.ui-slider-viewport {
+  width: 100%;
+  background-color: #12151a;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 280px;
+}
+
+.ui-slider-viewport img {
+  max-width: 100%;
+  max-height: 320px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Botons de navegació laterals */
+.ui-slider-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: rgba(45, 49, 66, 0.85);
+  color: #ffffff;
+  border: 1px solid var(--border-color);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.ui-slider-btn:hover {
+  background: var(--color-dark);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.ui-slider-btn.prev { left: 0.5rem; }
+.ui-slider-btn.next { right: 0.5rem; }
+
+/* Informació inferior de la diapositiva */
+.ui-slider-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0 0.5rem;
+}
+
+.ui-slider-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ui-slide-counter {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-muted);
+}
+
+.ui-slider-info h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.ui-slider-info p {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.5;
+  margin: 0;
 }

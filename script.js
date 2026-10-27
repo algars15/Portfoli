@@ -2,7 +2,7 @@
 const projectsDetails = {
   odossea: {
     title: "Odossea",
-    role: "Level Designer & Game Designer",
+    role: "Level Designer & Game Designer", // O si vols: "Level Designer & UI/UX Designer"
     award: " Best Technology Award – 9th Gran CITM Game Jam",
     videoSrc: "vid/Odossea.mp4",
     teamSize: "5",
@@ -20,9 +20,37 @@ const projectsDetails = {
       { name: "Oscar Alonso", role: "Programmer & Level Designer" },
       { name: "Toni Llovera", role: "UI/UX Programmer & Programmer" }
     ],
-    itchioLink: "https://torratsgames.itch.io/odossea"
+    itchioLink: "https://torratsgames.itch.io/odossea",
+    
+    
+   uiCaseStudy: [
+    {
+      tag: "Design System",
+      title: "Vector UI Kit & Scalable Assets",
+      desc: "Interactive button states, and audio control components designed with soft pastel gradients for resolution independence.",
+      img: "img/Odossea/ui-kit.png"
+    },
+    {
+      tag: "Information Architecture",
+      title: "Menu Hierarchy & Settings Layouts",
+      desc: "Structured option panels for Graphics and Audio adjustments, prioritizing intuitive spatial navigation and clear input feedback.",
+      img: "img/Odossea/ui-panels.png"
+    },
+    {
+      tag: "In-Engine Staging",
+      title: "In-Game Pause Overlay",
+      desc: "Pause menu staged directly against background gameplay environments to maintain high visual contrast and continuous player immersion.",
+      img: "img/Odossea/ui-paused-ingame.png"
+    },
+    {
+      tag: "In-Engine Staging",
+      title: "In-Game Options Overlay",
+      desc: "Options panel for immediate readability over active gameplay scenes.",
+      img: "img/Odossea/ui-options-ingame.png"
+    }
+  ]
   },
-
+  
   paraulesMagiques: {
     title: "Paraules Màgiques",
     role: "UI/UX Designer",
@@ -317,8 +345,33 @@ function openProjectModal(projectId) {
       </a>
     `;
   }
+let uiCaseStudyHtml = "";
+  if (project.uiCaseStudy && project.uiCaseStudy.length > 0) {
+    uiCaseStudyHtml = `
+      <h3 class="modal-section-title">UI/UX</h3>
+      <div class="ui-slider-container">
+        
+        <button class="ui-slider-btn prev" onclick="changeUiSlide(-1)">&larr;</button>
+        <button class="ui-slider-btn next" onclick="changeUiSlide(1)">&rarr;</button>
 
-  // 6. Inserció al cos del modal
+        <div class="ui-slider-viewport">
+          <img id="ui-slide-img" src="${project.uiCaseStudy[0].img}" alt="UI Slide" onclick="window.open(this.src, '_blank')">
+        </div>
+
+        <div class="ui-slider-info">
+          <div class="ui-slider-meta">
+            <span id="ui-slide-tag" class="ui-pro-badge">${project.uiCaseStudy[0].tag}</span>
+            <span id="ui-slide-counter" class="ui-slide-counter">1 / ${project.uiCaseStudy.length}</span>
+          </div>
+          <h4 id="ui-slide-title">${project.uiCaseStudy[0].title}</h4>
+          <p id="ui-slide-desc">${project.uiCaseStudy[0].desc}</p>
+        </div>
+
+      </div>
+    `;
+  }
+
+  // Inserció al cos del modal
   const modalBody = document.getElementById("modal-body");
   modalBody.innerHTML = `
     <h2 class="modal-title">${project.title}</h2>
@@ -327,11 +380,15 @@ function openProjectModal(projectId) {
 
     ${mediaHtml}
     ${metaBarHtml}
+        
+    ${uiCaseStudyHtml}
+
 
     <h3 class="modal-section-title">My Key Contributions</h3>
     <ul class="modal-list">
       ${project.contributions.map(item => `<li>${item}</li>`).join("")}
     </ul>
+
 
     ${galleryHtml}
 
@@ -396,3 +453,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+let currentUiSlide = 0;
+
+function changeUiSlide(direction) {
+  const modal = document.getElementById("project-modal");
+  // Obtenim el projecte actualment obert a partir de la cerca
+  const activeProjectId = Object.keys(projectsDetails).find(id => {
+    return projectsDetails[id].uiCaseStudy && document.getElementById("ui-slide-img");
+  });
+
+  if (!activeProjectId) return;
+  const slides = projectsDetails[activeProjectId].uiCaseStudy;
+
+  currentUiSlide += direction;
+  if (currentUiSlide < 0) currentUiSlide = slides.length - 1;
+  if (currentUiSlide >= slides.length) currentUiSlide = 0;
+
+  const current = slides[currentUiSlide];
+
+  document.getElementById("ui-slide-img").src = current.img;
+  document.getElementById("ui-slide-tag").textContent = current.tag;
+  document.getElementById("ui-slide-title").textContent = current.title;
+  document.getElementById("ui-slide-desc").textContent = current.desc;
+  document.getElementById("ui-slide-counter").textContent = `${currentUiSlide + 1} / ${slides.length}`;
+}
