@@ -69,7 +69,31 @@ const projectsDetails = {
       { name: "Marc Blánquez", role: "Programmer" },
       { name: "Arnau Balasch", role: "2D Artist" }
     ],
-    itchioLink: "https://mmiraa15.itch.io/paraules-magiques"
+    itchioLink: "https://mmiraa15.itch.io/paraules-magiques",
+
+    
+    uiCaseStudy: [
+      {
+        title: "UX Flow & Low-Fidelity Wireframes",
+        desc: "Initial paper and digital sketches mapping screen transitions, menu navigation, and core gameplay interaction loops.",
+        img: "img/PM/wireframes.png"
+      },
+      {
+        title: "Mid-Fidelity Layouts & Structure",
+        desc: "Greybox iteration phase validating layout scaling, spatial padding, button placement, and typography hierarchy before styling.",
+        img: "img/PM/midfi.png"
+      },
+      {
+        title: "Color Palette & Theme Exploration",
+        desc: "Color theory breakdown tailored for children, pairing high-contrast accessibility with vibrant environment-specific palettes.",
+        img: "img/PM/palette.png"
+      },
+      {
+        title: "High-Fidelity Final Interfaces",
+        desc: "Polished end-user UI featuring soft pastel gradients, rounded interactive components, and clear gameplay state feedback.",
+        img: "img/PM/hifi.png"
+      }
+    ]
   },
 
   sonOfIthaca: {
@@ -198,6 +222,7 @@ const projectsDetails = {
 };
 
 function openProjectModal(projectId) {
+  currentUiSlide = 0; 
   const project = projectsDetails[projectId];
   if (!project) return;
 
@@ -351,8 +376,8 @@ let uiCaseStudyHtml = "";
       <h3 class="modal-section-title">UI/UX Interactive Showcase</h3>
       <div class="ui-slider-container">
         
-        <button class="ui-slider-btn prev" onclick="changeUiSlide(-1)">&larr;</button>
-        <button class="ui-slider-btn next" onclick="changeUiSlide(1)">&rarr;</button>
+        <button class="ui-slider-btn prev" onclick="changeUiSlide(-1, '${projectId}')">&larr;</button>
+        <button class="ui-slider-btn next" onclick="changeUiSlide(1, '${projectId}')">&rarr;</button>
 
         <div class="ui-slider-viewport">
           <img id="ui-slide-img" src="${project.uiCaseStudy[0].img}" alt="UI Slide" onclick="window.open(this.src, '_blank')">
@@ -454,14 +479,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 let currentUiSlide = 0;
 
-function changeUiSlide(direction) {
-  const activeProjectId = Object.keys(projectsDetails).find(id => {
-    const project = projectsDetails[id];
-    return project.uiCaseStudy && document.getElementById("ui-slide-img");
-  });
+function changeUiSlide(direction, projectId) {
+  const project = projectsDetails[projectId];
+  if (!project || !project.uiCaseStudy) return;
 
-  if (!activeProjectId) return;
-  const slides = projectsDetails[activeProjectId].uiCaseStudy;
+  const slides = project.uiCaseStudy;
 
   currentUiSlide += direction;
   if (currentUiSlide < 0) currentUiSlide = slides.length - 1;
