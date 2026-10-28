@@ -977,7 +977,7 @@ header {
   transform: translateY(0);
 }
 
-/* BOTONS DE XARXES SOCIALS */
+/* BOTONES SOCIALES CON COLORES MARCA */
 .contact-socials {
   display: flex;
   flex-wrap: wrap;
@@ -999,42 +999,55 @@ header {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.45rem 1rem;
-  background-color: var(--color-dark);
-  border: 1px solid var(--color-dark);
   border-radius: 6px;
-  color: var(--bg-main) !important;
+  color: #ffffff !important;
   font-size: 0.85rem;
   font-weight: 600;
   text-decoration: none !important;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
 }
 
 .social-link svg {
   width: 16px;
   height: 16px;
   fill: currentColor;
-  color: var(--bg-main);
+  color: #ffffff;
   flex-shrink: 0;
   display: block;
 }
 
+/* Color LinkedIn */
+.social-link[title="LinkedIn"] {
+  background-color: #0a66c2;
+  border: 1px solid #0a66c2;
+}
+
+/* Color ArtStation */
+.social-link[title="ArtStation"] {
+  background-color: #13aff0;
+  border: 1px solid #13aff0;
+}
+
+/* Color Itch.io */
+.social-link[title="Itch.io"] {
+  background-color: #fa5c5c;
+  border: 1px solid #fa5c5c;
+}
+
+/* Color GitHub */
+.social-link[title="GitHub"] {
+  background-color: #24292e;
+  border: 1px solid #24292e;
+}
+
+/* Efecto hover común */
 .social-link:hover {
-  background-color: var(--color-muted);
-  border-color: var(--color-muted);
-  color: #ffffff !important;
+  opacity: 0.9;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 650px) {
-  .form-group-row {
-    grid-template-columns: 1fr;
-  }
-  
-  .contact-card {
-    padding: 1.8rem 1.2rem;
-  }
-
   .social-link {
     width: 100%;
   }
