@@ -36,16 +36,19 @@ const projectsDetails = {
       desc: "Structured option panels for Graphics and Audio adjustments, prioritizing intuitive spatial navigation and clear input feedback.",
       img: "img/Odossea/ui-panels.png"
     },
+     {
+     
+      title: "Game Menu",
+      img: "img/Odossea/gameMenu.png"
+    },
     {
      
       title: "In-Game Pause Overlay",
-      desc: "Pause menu staged directly against background gameplay environments to maintain high visual contrast and continuous player immersion.",
       img: "img/Odossea/ui-paused-ingame.png"
     },
     {
       
       title: "In-Game Options Overlay",
-      desc: "Options panel for immediate readability over active gameplay scenes.",
       img: "img/Odossea/ui-options-ingame.png"
     }
   ]
@@ -111,6 +114,44 @@ const projectsDetails = {
       "Executed set dressing and environmental staging across Levels 1 and 2 to significantly enhance visual fidelity.",
       "Designed UI gameplay elements, including the health bar interface for the final boss encounter."
     ],
+    uiCaseStudy: [
+    {
+      
+      title: "Catalyst statue",
+      img: "img/SonOfithaca/cap1.png"
+    },
+    {
+     
+      title: "Activating Statue",
+      img: "img/SonOfithaca/cap2.png"
+    },
+     {
+     
+      title: "Enviroment Decoration",
+      img: "img/SonOfithaca/cap3.png"
+    },
+    {
+     
+      title: "Modular bridge",
+      img: "img/SonOfithaca/cap6.png"
+    },
+    {
+     
+      title: "Boss bar",
+      img: "img/SonOfithaca/cap10.png"
+    },
+    {
+     
+      title: "Pression plate",
+      img: "img/SonOfithaca/cap5.png"
+    },
+    {
+      
+      title: "Statue Concepts",
+      img: "img/SonOfithaca/cap8.png"
+    }
+  ],
+  
     team: [
       { name: "Nobody Games Studio", role: "Development & Production" }
     ],
@@ -574,25 +615,56 @@ function changeUiSlide(direction, projectId) {
   if (!project || !project.uiCaseStudy) return;
 
   const slides = project.uiCaseStudy;
-
-  currentUiSlide += direction;
-  if (currentUiSlide < 0) currentUiSlide = slides.length - 1;
-  if (currentUiSlide >= slides.length) currentUiSlide = 0;
-
-  const current = slides[currentUiSlide];
-
-  document.getElementById("ui-slide-img").src = current.img;
-  document.getElementById("ui-slide-title").textContent = current.title;
-  document.getElementById("ui-slide-counter").textContent = `${currentUiSlide + 1} / ${slides.length}`;
-
+  const imgElem = document.getElementById("ui-slide-img");
+  const titleElem = document.getElementById("ui-slide-title");
   const descElem = document.getElementById("ui-slide-desc");
-  if (descElem) {
-    if (current.desc) {
-      descElem.textContent = current.desc;
-      descElem.style.display = "block";
-    } else {
-      descElem.textContent = "";
-      descElem.style.display = "none";
+
+ 
+  const exitClass = direction === 1 ? "slide-exit-right" : "slide-exit-left";
+  const enterClass = direction === 1 ? "slide-enter-left" : "slide-enter-right";
+
+  // 1. Apliquem l'animació de sortida a la imatge actual
+  if (imgElem) imgElem.classList.add(exitClass);
+
+  setTimeout(() => {
+    
+    currentUiSlide += direction;
+    if (currentUiSlide < 0) currentUiSlide = slides.length - 1;
+    if (currentUiSlide >= slides.length) currentUiSlide = 0;
+
+    const current = slides[currentUiSlide];
+
+    
+    if (imgElem) {
+      imgElem.classList.remove(exitClass);
+      imgElem.classList.add(enterClass);
+      imgElem.src = current.img;
     }
-  }
+
+    
+    if (titleElem) titleElem.textContent = current.title;
+
+    const counterElem = document.getElementById("ui-slide-counter");
+    if (counterElem) {
+      counterElem.textContent = `${currentUiSlide + 1} / ${slides.length}`;
+    }
+
+    if (descElem) {
+      if (current.desc) {
+        descElem.textContent = current.desc;
+        descElem.style.display = "block";
+      } else {
+        descElem.textContent = "";
+        descElem.style.display = "none";
+      }
+    }
+
+    
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        if (imgElem) imgElem.classList.remove(enterClass);
+      }, 20);
+    });
+
+  }, 180);
 }
