@@ -131,13 +131,38 @@ const projectsDetails = {
       "Configured environmental lighting, baked lightmaps, and set up the post-processing stack.",
       "Curated external assets and integrated decorative artwork into the environment."
     ],
-    gallery: [
-      { src: "img/tavern/cap1.png", caption: "Main Hall from above" },
-      { src: "img/tavern/cap2.png", caption: "Bar Counter" },
-      { src: "img/tavern/cap4.png", caption: "Tavern wine cellar" },
-      { src: "img/tavern/cap3.png", caption: "Main Hall" }
-
+     uiCaseStudy: [
+      {
+        title: "Main Hall Blockout",
+        img: "img/tavern/cap7.png"
+      },
+      {
+        title: "Tavern wine cellar Blockout",
+        img: "img/tavern/cap6.png"
+      },
+       {
+        title: "Main Hall",
+        img: "img/tavern/cap3.png"
+      },
+       {
+        title: "Bar Counter",
+        img: "img/tavern/cap2.png"
+      },
+      {
+        title: "Main Hall from above",
+        img: "img/tavern/cap1.png"
+      },
+      {
+        title: "Tavern wine cellar",
+        img: "img/tavern/cap4.png"
+      },
+      {
+        title: "My 3D Assets",
+        img: "img/tavern/cap8.png"
+      }
+      
     ],
+    
    team: [
       { name: "Martí Mira", role: "Lead 3D Artist" },
       { name: "Marc Blánquez", role: "3D Artist & Programmer" },
@@ -159,6 +184,24 @@ const projectsDetails = {
       "Structured and balanced level progression and entity placement using XML data pipelines.",
       "Collaborated closely with gameplay programmers to tune combat spaces, camera bounds, and collision zones in custom C++ engines.",
       "Iterated on puzzle and platforming mechanics based on playtesting feedback."
+    ],
+     uiCaseStudy: [
+      {
+        title: "Level 1 sketch",
+        img: "img/km/cap5.png"
+      },
+      {
+        title: "Level 1 Blockout",
+        img: "img/km/cap4.png"
+      },
+       {
+        title: "Level 1 Critical Path",
+        img: "img/km/cap3.png"
+      },
+       {
+        title: "Level 2 Critical Path",
+        img: "img/km/cap2.png"
+      } 
     ],
     team: [
       { name: "EVER REST GAMES", role: "Production, Art & Programming" }
@@ -255,6 +298,13 @@ const projectsDetails = {
 function openProjectModal(projectId) {
   currentUiSlide = 0; 
 
+  const modalOverlay = document.getElementById("project-modal");
+  modalOverlay.style.display = "flex";
+  document.body.style.overflow = "hidden";
+  const modalContainer = modalOverlay.querySelector(".modal-container");
+  if (modalContainer) {
+    modalContainer.scrollTop = 0;
+  }
   const project = projectsDetails[projectId];
   if (!project) return;
 
@@ -402,8 +452,7 @@ function openProjectModal(projectId) {
       </a>
     `;
   }
-
-  let uiCaseStudyHtml = "";
+let uiCaseStudyHtml = "";
   if (project.uiCaseStudy && project.uiCaseStudy.length > 0) {
     const firstSlide = project.uiCaseStudy[0];
     const initialDescHtml = firstSlide.desc ? `<p id="ui-slide-desc">${firstSlide.desc}</p>` : `<p id="ui-slide-desc" style="display: none;"></p>`;
@@ -443,12 +492,15 @@ function openProjectModal(projectId) {
     ${mediaHtml}
     ${metaBarHtml}
         
-    ${uiCaseStudyHtml}
+    
+
 
     <h3 class="modal-section-title">My Key Contributions</h3>
     <ul class="modal-list">
       ${project.contributions.map(item => `<li>${item}</li>`).join("")}
     </ul>
+
+    ${uiCaseStudyHtml}
 
     ${galleryHtml}
 
@@ -459,17 +511,10 @@ function openProjectModal(projectId) {
     </div>
   `;
 
-  const modalOverlay = document.getElementById("project-modal");
-  const modalContent = document.querySelector(".modal-content");
-
-  // Primer mostrem el modal
-  modalOverlay.style.display = "flex";
+  document.getElementById("project-modal").style.display = "flex";
   document.body.style.overflow = "hidden";
 
-  // Reiniciem el scroll JUST DESPRÉS de fer-lo visible
-  modalOverlay.scrollTop = 0;
-  if (modalContent) modalContent.scrollTop = 0;
-  if (modalBody) modalBody.scrollTop = 0;
+  
 }
 
 function closeProjectModal(event) {
