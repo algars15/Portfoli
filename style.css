@@ -28,7 +28,7 @@ body {
   line-height: 1.6;
   color: var(--color-dark);
   background-color: var(--bg-main);
-  padding-top: 75px; /* Espai de seguretat perquè el menú fix no tapi contingut */
+  padding-top: 63px; 
 }
 
 /* ==========================================================================
@@ -48,7 +48,7 @@ header {
   align-items: center;
   width: 100%;
   padding: 0.9rem 4%;
-  background-color: var(--bg-main);
+  background-color: var(--bg-card);
   border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -121,31 +121,83 @@ header {
    4. SECCIÓ HERO
    ========================================================================== */
 .hero {
+  position: relative;
   text-align: center;
-  padding: 6rem 2rem 5rem;
-  background: linear-gradient(180deg, var(--bg-main) 0%, var(--color-secondary) 100%);
+  padding: 8rem 2rem 7rem;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Amaga les diapositives que surten del marc */
   border-bottom: 1px solid var(--border-color);
+}
+
+/* Contenidor absolut per al slider de fons */
+.hero-bg-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Capes individuals de diapositiva */
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(100%); /* Preparades a la dreta fora de marc */
+  z-index: 1;
+}
+
+
+.hero-bg-slide.active {
+  transform: translateX(0%);
+  z-index: 2;
+}
+
+
+.hero-bg-slide.exit-left {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.55);
+  z-index: 3;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 4;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .hero h1 {
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: var(--color-dark);
+  color: var(--color-secondary);
   margin-bottom: 0.8rem;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: var(--color-dark);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 700px;
   margin: 0 auto 2.2rem;
 }
 
 .btn {
   display: inline-block;
-  background: var(--color-dark);
-  color: var(--bg-main);
+  background: var(--color-secondary);
+  color: var(--color-dark);
   padding: 0.8rem 1.8rem;
   border-radius: 6px;
   text-decoration: none;
@@ -155,7 +207,7 @@ header {
 }
 
 .btn:hover {
-  background: var(--color-muted);
+  background: var(--color-secondary);
   transform: translateY(-1px);
 }
 

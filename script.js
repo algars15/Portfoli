@@ -668,3 +668,30 @@ function changeUiSlide(direction, projectId) {
 
   }, 180);
 }
+// Carrusel de diapositives automàtic per al fons de la Hero Section
+document.addEventListener("DOMContentLoaded", () => {
+  const bgSlides = document.querySelectorAll(".hero-bg-slide");
+  if (bgSlides.length === 0) return;
+
+  let currentIndex = 0;
+  const slideInterval = 5000; // Canvia de diapositiva cada 5 segons
+
+  setInterval(() => {
+    const previousIndex = currentIndex;
+    currentIndex = (currentIndex + 1) % bgSlides.length;
+
+    // 1. La diapositiva actual surt glissant cap a l'esquerra
+    bgSlides[previousIndex].classList.remove("active");
+    bgSlides[previousIndex].classList.add("exit-left");
+
+    // 2. Preparem la nova diapositiva perquè entre des de la dreta
+    bgSlides[currentIndex].classList.remove("exit-left");
+    bgSlides[currentIndex].classList.add("active");
+
+    // 3. Resutem la posició de la foto antiga quan ha completat la transició
+    setTimeout(() => {
+      bgSlides[previousIndex].classList.remove("exit-left");
+    }, 1200); // Coincideix amb els 1.2s de la transició CSS
+
+  }, slideInterval);
+});
