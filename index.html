@@ -435,7 +435,7 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
   <script src="script.js"></script>
 </body>
 </html>
-  <!-- Secció de Contacte -->
+ <!-- Secció de Contacte -->
 <section id="contact" class="section contact-section">
   <div class="contact-card">
     
@@ -444,20 +444,41 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
       <h2 class="contact-title">Let's build something great together</h2>
       <p class="contact-desc">
         I am currently looking for new opportunities, internships, or studio collaborations. 
-        Feel free to reach out directly or connect through my social profiles.
+        Feel free to send me a message directly or connect through my social profiles.
       </p>
     </div>
 
-    <!-- Botó d'acció directe -->
-    <div class="contact-action">
-      <a href="mailto:martiwp05@gmail.com" class="btn-contact-main">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
+    <!-- Contact Form (Direct Email) -->
+    <form action="https://formspree.io/f/EL_TEU_ID_DE_FORMSPREE" method="POST" class="contact-form">
+      <div class="form-group-row">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-contact-submit">
+        <span>Send Message</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
         </svg>
-        Send an Email
-      </a>
-    </div>
+      </button>
+    </form>
 
     <div class="contact-socials">
       <!-- LinkedIn -->
