@@ -60,7 +60,7 @@ const projectsDetails = {
     devTime: "1 month",
     techStack: "Unity (C#)",
     contributions: [
-      "Conceptualized the core educational game flow and dynamic word puzzle progression.",
+      "Game flow and dynamic word puzzle progression.",
       "Designed and structured clean, accessible UI layouts for browser gameplay.",
       "Implemented responsive HTML5 canvas systems, gameplay feedback, and audio cues."
     ],
@@ -175,7 +175,7 @@ const projectsDetails = {
     devTime: "3 months",
     techStack: "C++ (Raylib, Box2D)",
     contributions: [
-      "Designed and implemented clean, responsive in-game UI layouts and real-time HUD elements (speedometer, lap timer, and race indicators) optimized for fast readability.",
+      "Designed and implemented clean, responsive in-game UI layouts and real-time HUD elements optimized for fast readability.",
       "Programmed a sequential checkpoint tracking system using Box2D sensors to manage lap completion, split times, and race progression accurately.",
       "Engineered vehicle-environment collision responses and tuned physical properties (friction, restitution, and track boundaries) in Box2D for responsive arcade handling."
     ],
@@ -192,7 +192,7 @@ const projectsDetails = {
   godOfWarBlockout: {
     title: "God of War (2018) – Level Blockout",
     role: "Level Designer & Blueprint Scripter",
-    trailerEmbedUrl: "https://www.youtube.com/embed/Ck3RebU0pN8", // Sustituye con el ID de tu vídeo de YouTube
+    trailerEmbedUrl: "https://www.youtube.com/embed/Ck3RebU0pN8", 
     coverImg: "img/gow-cover.png",
     teamSize: "2",
     devTime: "1 month",
@@ -203,15 +203,46 @@ const projectsDetails = {
       "Implemented a strict color-coded greyboxing framework to clearly communicate traversable paths, structural spaces, vertical nodes, and breakable environmental barricades.",
       "Programmed core mechanics via Blueprints: Leviathan Axe aim, throw, and recall projectile behaviors alongside ladder climb volumes and state transitions."
     ],
-    gallery: [
-      { src: "img/GOW/Captura 1.png", caption: "Bridge zone"},
-      { src: "img/GOW/Captura 2.png", caption: "Forest Zone" },
-      { src: "img/GOW/Captura 3.png", caption: "Hall Zone" },
-      { src: "img/GOW/layout.png",    caption: "Layout 2D" }
-
-     
-
+    
+    uiCaseStudy: [
+      {
+        title: "Bridge & Traversability Zone",
+        img: "img/GOW/Captura 1.png"
+      },
+      {
+        title: "Forest Zone & Pacing",
+        img: "img/GOW/Captura 2.png"
+      },
+      {
+        title: "Hall Zone & Verticality",
+        img: "img/GOW/Captura 3.png"
+      },
+      {
+        title: "2D Spatial Layout & Flow Graph",
+        img: "img/GOW/layout.png"
+      },
+      {
+        title: "Verticality nodes",
+        img: "img/GOW/Captura4.png"
+      },
+      {
+        title: "Destructible walls",
+        img: "img/GOW/Captura5.png"
+      },
+      {
+        title: "Door of Kratos house",
+        img: "img/GOW/Captura6.png"
+      },
+      {
+        title: "Axe throwing Blueprint",
+        img: "img/GOW/Captura7.png"
+      },
+      {
+        title: "Kratos Movement Blueprint",
+        img: "img/GOW/Captura8.png"
+      },
     ],
+
     team: [
       { name: "Martí Mira", role: "Level Designer & Blueprint Scripter" },
       { name: "Marc Blánquez", role: "Level Designer & Blueprint Scripter" }
@@ -223,6 +254,7 @@ const projectsDetails = {
 
 function openProjectModal(projectId) {
   currentUiSlide = 0; 
+
   const project = projectsDetails[projectId];
   if (!project) return;
 
@@ -370,25 +402,31 @@ function openProjectModal(projectId) {
       </a>
     `;
   }
-let uiCaseStudyHtml = "";
+
+  let uiCaseStudyHtml = "";
   if (project.uiCaseStudy && project.uiCaseStudy.length > 0) {
+    const firstSlide = project.uiCaseStudy[0];
+    const initialDescHtml = firstSlide.desc ? `<p id="ui-slide-desc">${firstSlide.desc}</p>` : `<p id="ui-slide-desc" style="display: none;"></p>`;
+
     uiCaseStudyHtml = `
-      <h3 class="modal-section-title">UI/UX Interactive Showcase</h3>
+      <h3 class="modal-section-title">Showcase</h3>
       <div class="ui-slider-container">
         
-        <button class="ui-slider-btn prev" onclick="changeUiSlide(-1, '${projectId}')">&larr;</button>
-        <button class="ui-slider-btn next" onclick="changeUiSlide(1, '${projectId}')">&rarr;</button>
-
         <div class="ui-slider-viewport">
-          <img id="ui-slide-img" src="${project.uiCaseStudy[0].img}" alt="UI Slide" onclick="window.open(this.src, '_blank')">
+          <img id="ui-slide-img" src="${firstSlide.img}" alt="Slide" onclick="window.open(this.src, '_blank')">
         </div>
 
         <div class="ui-slider-info">
-          <div class="ui-slider-meta">
-            <h4 id="ui-slide-title" style="margin: 0;">${project.uiCaseStudy[0].title}</h4>
+          <div class="ui-slider-header">
+            <h4 id="ui-slide-title">${firstSlide.title}</h4>
             <span id="ui-slide-counter" class="ui-slide-counter">1 / ${project.uiCaseStudy.length}</span>
           </div>
-          <p id="ui-slide-desc">${project.uiCaseStudy[0].desc}</p>
+          ${initialDescHtml}
+          
+          <div class="ui-slider-controls">
+            <button class="ui-slider-btn prev" onclick="changeUiSlide(-1, '${projectId}')">&larr;</button>
+            <button class="ui-slider-btn next" onclick="changeUiSlide(1, '${projectId}')">&rarr;</button>
+          </div>
         </div>
 
       </div>
@@ -407,12 +445,10 @@ let uiCaseStudyHtml = "";
         
     ${uiCaseStudyHtml}
 
-
     <h3 class="modal-section-title">My Key Contributions</h3>
     <ul class="modal-list">
       ${project.contributions.map(item => `<li>${item}</li>`).join("")}
     </ul>
-
 
     ${galleryHtml}
 
@@ -423,8 +459,17 @@ let uiCaseStudyHtml = "";
     </div>
   `;
 
-  document.getElementById("project-modal").style.display = "flex";
+  const modalOverlay = document.getElementById("project-modal");
+  const modalContent = document.querySelector(".modal-content");
+
+  // Primer mostrem el modal
+  modalOverlay.style.display = "flex";
   document.body.style.overflow = "hidden";
+
+  // Reiniciem el scroll JUST DESPRÉS de fer-lo visible
+  modalOverlay.scrollTop = 0;
+  if (modalContent) modalContent.scrollTop = 0;
+  if (modalBody) modalBody.scrollTop = 0;
 }
 
 function closeProjectModal(event) {
@@ -493,6 +538,16 @@ function changeUiSlide(direction, projectId) {
 
   document.getElementById("ui-slide-img").src = current.img;
   document.getElementById("ui-slide-title").textContent = current.title;
-  document.getElementById("ui-slide-desc").textContent = current.desc;
   document.getElementById("ui-slide-counter").textContent = `${currentUiSlide + 1} / ${slides.length}`;
+
+  const descElem = document.getElementById("ui-slide-desc");
+  if (descElem) {
+    if (current.desc) {
+      descElem.textContent = current.desc;
+      descElem.style.display = "block";
+    } else {
+      descElem.textContent = "";
+      descElem.style.display = "none";
+    }
+  }
 }
