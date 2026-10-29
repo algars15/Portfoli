@@ -448,11 +448,13 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
       </p>
     </div>
 
-   <!-- Contact Form (Direct Email with FormSubmit) -->
-<form action="https://formsubmit.co/martiwp05@gmail.com" method="POST" class="contact-form">
-  <!-- Configuració de FormSubmit -->
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="hidden" name="_template" value="table" />
+  <!-- Contact Form (Direct Email with Web3Forms) -->
+<form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+  <!-- Posa aquí la clau d'accés que t'ha donat Web3Forms -->
+  <input type="hidden" name="access_key" value="2a3525ef-b498-4f54-9f09-b8e300bda48b" />
+  
+  <!-- Assumpte del correu que rebràs -->
+  <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio" />
 
   <div class="form-group-row">
     <div class="form-group">
@@ -467,7 +469,7 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
 
   <div class="form-group">
     <label for="subject">Subject</label>
-    <input type="text" id="subject" name="_subject" placeholder="Subject" required />
+    <input type="text" id="subject" name="custom_subject" placeholder="Subject" required />
   </div>
 
   <div class="form-group">
@@ -483,7 +485,6 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
     </svg>
   </button>
 </form>
-
     <div class="contact-socials">
       <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/mart%C3%AD-mira-58166929a/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
