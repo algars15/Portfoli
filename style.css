@@ -128,18 +128,16 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Amaga les diapositives que surten del marc */
+  overflow: hidden; 
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Contenidor absolut per al slider de fons */
 .hero-bg-slider {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-/* Capes individuals de diapositiva */
 .hero-bg-slide {
   position: absolute;
   inset: 0;
@@ -218,7 +216,7 @@ header {
 .about-hero,
 .contact-section {
   width: 100%;
-  max-width: 92%; /* Ocupa el 92% de l'ample per aprofitar tota la pantalla */
+  max-width: 92%; 
   margin: 5rem auto;
   padding: 0;
   box-sizing: border-box;
@@ -342,7 +340,6 @@ header {
   transition: all 0.2s ease;
 }
 
-/* Botó Email */
 .btn-about-email {
   background-color: rgba(255, 255, 255, 0.08);
   color: var(--bg-main);
@@ -355,7 +352,6 @@ header {
   transform: translateY(-2px);
 }
 
-/* Botó Descarregar CV */
 .btn-about-cv {
   background-color: var(--color-secondary);
   color: #ffffff;
@@ -369,7 +365,6 @@ header {
   box-shadow: 0 4px 12px rgba(124, 152, 133, 0.35);
 }
 
-/* Adaptació mòbil */
 @media (max-width: 600px) {
   .about-actions {
     flex-direction: column;
@@ -503,12 +498,10 @@ header {
   transition: opacity 0.3s ease;
 }
 
-/* Només oculta la imatge en targetes amb vídeo preview */
 .project-card:has(.project-card-video):hover .project-img {
   opacity: 0;
 }
 
-/* Si no té vídeo, fa zoom sense quedar-se en negre */
 .project-card:not(:has(.project-card-video)):hover .project-img {
   opacity: 1;
   transform: scale(1.03);
@@ -1144,10 +1137,9 @@ header {
   align-items: center;
   min-height: 280px;
   position: relative;
-  overflow: hidden; /* Necessari per amagar les imatges fora de marc */
+  overflow: hidden; 
 }
 
-/* Imatge principal i transició de desplaçament horitzontal */
 .ui-slider-viewport img {
   max-width: 100%;
   max-height: 320px;
@@ -1158,7 +1150,7 @@ header {
   border-radius: 6px;
   cursor: pointer;
   
-  /* Transició suau de moviment lateral */
+ 
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
   transform: translateX(0);
   opacity: 1;
@@ -1186,7 +1178,6 @@ header {
   opacity: 0 !important;
 }
 
-/* Informació inferior de la diapositiva */
 .ui-slider-info {
   display: flex;
   flex-direction: column;
