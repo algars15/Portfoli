@@ -907,7 +907,7 @@ header {
   width: 100%;
   padding: 0.55rem 0.85rem;
   background-color: var(--bg-main);
-  border: 1px solid var(--col);
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   font-family: inherit;
   font-size: 0.9rem;
