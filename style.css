@@ -1275,3 +1275,13 @@ body.cursor-hover .star-cursor-dot {
   background-color: #ffffff;
   box-shadow: 0 0 12px #edae49, 0 0 25px #edae49;
 }
+/* Amagar el cursor personalitzat en mòbils i pantalles tàctils */
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+  #cursor-canvas,
+  .star-cursor-dot {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}

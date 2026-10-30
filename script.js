@@ -449,10 +449,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const cursorDot = document.querySelector(".star-cursor-dot");
   const canvas = document.getElementById("cursor-canvas");
 
-  // Detectem si el dispositiu és tàctil o no utilitza ratolí
-  const isTouchDevice = matchMedia("(pointer: coarse)").matches || 'ontouchstart' in window;
+  const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches || window.innerWidth <= 768;
 
-  if (cursorDot && canvas && !isTouchDevice) {
+  if (isMobile) {
+    if (cursorDot) cursorDot.remove();
+    if (canvas) canvas.remove();
+  } else if (cursorDot && canvas) {
     const ctx = canvas.getContext("2d");
     let points = [];
 
