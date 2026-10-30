@@ -449,7 +449,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const cursorDot = document.querySelector(".star-cursor-dot");
   const canvas = document.getElementById("cursor-canvas");
 
-  if (cursorDot && canvas) {
+  // Detectem si el dispositiu és tàctil o no utilitza ratolí
+  const isTouchDevice = matchMedia("(pointer: coarse)").matches || 'ontouchstart' in window;
+
+  if (cursorDot && canvas && !isTouchDevice) {
     const ctx = canvas.getContext("2d");
     let points = [];
 
