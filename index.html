@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Cursor personalitzat -->
+<canvas id="cursor-canvas"></canvas>
+<div class="star-cursor-dot"></div>
 
   <!-- Navigation Bar -->
   <header>
@@ -450,10 +455,8 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
 
   <!-- Contact Form (Direct Email with Web3Forms) -->
 <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-  <!-- Posa aquí la clau d'accés que t'ha donat Web3Forms -->
   <input type="hidden" name="access_key" value="2a3525ef-b498-4f54-9f09-b8e300bda48b" />
   
-  <!-- Assumpte del correu que rebràs -->
   <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio" />
 
   <div class="form-group-row">

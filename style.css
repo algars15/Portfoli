@@ -1,3 +1,12 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* Suavitat extra a mòbils i trackpads */
+}
 /* ==========================================================================
    1. PALETA DE COLORS I VARIABLES
    ========================================================================== */
@@ -85,9 +94,9 @@ header {
 }
 
 .nav-links a.active {
-  color: #00bcd4;
-  background-color: rgba(0, 188, 212, 0.12);
-  border-bottom: 3px solid #00bcd4;
+  color: var(--color-secondary);
+  background-color: rgba(237, 174, 73, 0.12);
+  border-bottom: 3px solid var(--color-secondary);
 }
 .logo-link {
   display: flex;
@@ -145,22 +154,19 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateX(100%); /* Preparades a la dreta fora de marc */
+  transform: translateX(100%);
   z-index: 1;
 }
-
 
 .hero-bg-slide.active {
   transform: translateX(0%);
   z-index: 2;
 }
 
-
 .hero-bg-slide.exit-left {
   transform: translateX(-100%);
   z-index: 1;
 }
-
 
 .hero-overlay {
   position: absolute;
@@ -168,7 +174,6 @@ header {
   background: rgba(10, 10, 10, 0.55);
   z-index: 3;
 }
-
 
 .hero-content {
   position: relative;
@@ -210,7 +215,7 @@ header {
 }
 
 /* ==========================================================================
-   5. SECCIONS GENERALS (AMPLADA FLUIDA PANTALLA COMPLETA)
+   5. SECCIONS GENERALS
    ========================================================================== */
 .section,
 .about-hero,
@@ -228,7 +233,7 @@ header {
   color: var(--color-dark);
   margin-bottom: 2rem;
   padding-bottom: 0.6rem;
-  border-bottom: 2px solid var(--color-dark);
+  border-bottom: 2px solid var(--border-color);
   letter-spacing: -0.02em;
 }
 
@@ -291,7 +296,7 @@ header {
   background-color: var(--color-secondary); 
   display: block;
 }
-/* GAIXETA DE DADES COMPLEMENTÀRIES */
+
 .about-meta-grid {
   display: flex;
   flex-direction: column;
@@ -320,7 +325,6 @@ header {
   color: #e2e8f0;
 }
 
-/* BOTONS D'ACCIÓ ABOUT ME */
 .about-actions {
   display: flex;
   flex-wrap: wrap;
@@ -378,7 +382,7 @@ header {
 }
 
 /* ==========================================================================
-   7. CARRUSEL D'HABILITATS (SKILLS)
+   7. SKILLS CAROUSEL
    ========================================================================== */
 .skills-carousel {
   overflow: hidden;
@@ -426,12 +430,8 @@ header {
 }
 
 @keyframes scroll-loop {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-50% - 0.9rem));
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 0.9rem)); }
 }
 
 /* ==========================================================================
@@ -443,6 +443,7 @@ header {
   gap: 2rem;
   margin-top: 1.5rem;
   width: 100%;
+  perspective: 1000px; /* Habilita la perspectiva 3D */
 }
 
 .project-card {
@@ -454,11 +455,12 @@ header {
   flex-direction: column;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
   border-color: var(--color-muted); 
   box-shadow: var(--shadow-md);
 }
@@ -476,9 +478,6 @@ header {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -webkit-crisp-edges;
-  image-rendering: pixelated; /* Píxels nets per als títols pixel-art */
   display: block;
   position: relative;
   z-index: 1;
@@ -634,19 +633,6 @@ header {
   color: var(--bg-main);
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
-}
-.btn-about-build {
-  background-color: transparent;
-  color: var(--color-secondary);
-  border: 1px solid var(--color-secondary);
-  transition: all 0.25s ease;
-}
-
-.btn-about-build:hover {
-  background-color: var(--color-secondary);
-  color: var(--color-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(237, 174, 73, 0.3);
 }
 
 /* ==========================================================================
@@ -835,12 +821,12 @@ header {
 }
 
 /* ==========================================================================
-   10. TARGETA DE CONTACTE (COMPACTA EN ALÇADA)
+   10. TARGETA DE CONTACTE
    ========================================================================== */
 .contact-card {
   width: 100%;
   max-width: 100%;
-  background-color: var(--color-secondary); 
+  background-color: var(--color-dark); 
   border: 1px solid var(--border-color);
   border-radius: 20px;
   padding: 2rem 3rem;
@@ -870,24 +856,24 @@ header {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-muted); 
+  color: var(--bg-card); 
 }
 
 .contact-title {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--color-dark);
+  color: var(--bg-main) !important;
   line-height: 1.15;
   margin: 0;
+  
 }
 
 .contact-desc {
   font-size: 0.95rem;
   line-height: 1.4;
-  color: var(--color-muted);
+  color: var(--bg-card);
 }
 
-/* FORMULARI AMB ALÇADA REDUÏDA */
 .contact-form {
   width: 100%;
   max-width: 680px;
@@ -913,7 +899,7 @@ header {
 .form-group label {
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--color-dark);
+  color: var(--bg-card);
 }
 
 .form-group input,
@@ -925,14 +911,14 @@ header {
   border-radius: 6px;
   font-family: inherit;
   font-size: 0.9rem;
-  color: var(--color-dark);
+  color: var(--bg-card);
   transition: all 0.25s ease;
   outline: none;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--color-dark);
+  border-color: var(--bg-card);
   box-shadow: 0 0 0 3px rgba(45, 49, 66, 0.12);
   background-color: #ffffff;
 }
@@ -947,7 +933,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--color-dark);
+  background-color: var(--color-secondary);
   color: var(--bg-main);
   padding: 0.65rem 1.8rem;
   border-radius: 6px;
@@ -961,7 +947,8 @@ header {
 }
 
 .btn-contact-submit:hover {
-  background-color: var(--color-muted);
+  background-color: var(--color-secondary);
+  border-color: #d99b38;
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
 }
@@ -970,7 +957,6 @@ header {
   transform: translateY(0);
 }
 
-/* BOTONES SOCIALES CON COLORES MARCA */
 .contact-socials {
   display: flex;
   flex-wrap: wrap;
@@ -1009,31 +995,26 @@ header {
   display: block;
 }
 
-/* Color LinkedIn */
 .social-link[title="LinkedIn"] {
   background-color: #0a66c2;
   border: 1px solid #0a66c2;
 }
 
-/* Color ArtStation */
 .social-link[title="ArtStation"] {
   background-color: #13aff0;
   border: 1px solid #13aff0;
 }
 
-/* Color Itch.io */
 .social-link[title="Itch.io"] {
   background-color: #fa5c5c;
   border: 1px solid #fa5c5c;
 }
 
-/* Color GitHub */
 .social-link[title="GitHub"] {
   background-color: #24292e;
   border: 1px solid #24292e;
 }
 
-/* Efecto hover común */
 .social-link:hover {
   opacity: 0.9;
   transform: translateY(-2px);
@@ -1103,6 +1084,7 @@ header {
 
   .contact-title {
     font-size: 1.8rem;
+    color: var(--bg-main);
   }
 
   .social-link {
@@ -1110,6 +1092,7 @@ header {
     justify-content: center;
   }
 }
+
 /* ==========================================================================
    UI/UX INTERACTIVE SLIDER SHOWCASE
    ========================================================================== */
@@ -1149,14 +1132,11 @@ header {
   display: block;
   border-radius: 6px;
   cursor: pointer;
-  
- 
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
   transform: translateX(0);
   opacity: 1;
 }
 
-/* --- TRANSICIÓ DE DRETA A ESQUERRA (NEXT / Avançar) --- */
 .slide-exit-left {
   transform: translateX(-100px) !important;
   opacity: 0 !important;
@@ -1167,7 +1147,6 @@ header {
   opacity: 0 !important;
 }
 
-/* --- TRANSICIÓ D'ESQUERRA A DRETA (PREV / Recular) --- */
 .slide-exit-right {
   transform: translateX(100px) !important;
   opacity: 0 !important;
@@ -1212,7 +1191,6 @@ header {
   margin: 0;
 }
 
-/* Botons de navegació inferiors */
 .ui-slider-controls {
   display: flex;
   gap: 0.5rem;
@@ -1241,4 +1219,65 @@ header {
   background: var(--color-dark);
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   ANIMACIONES AL HACER SCROLL (FADE IN)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ==========================================================================
+   CURSOR 
+   ========================================================================== */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  a, button, .project-card, input, textarea {
+    cursor: none !important;
+  }
+}
+
+/* Canvas transparent per al traç de l'estela */
+#cursor-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99998;
+}
+
+/* El punt principal groc (cap de l'estrella) */
+.star-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #edae49; /* Groc mostassa del teu portfoli */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px #edae49, 0 0 20px #edae49; /* Glow d'estrella */
+  transition: transform 0.15s ease;
+}
+
+/* Efecte lleuger en hover sobre elements clicables */
+body.cursor-hover .star-cursor-dot {
+  transform: translate(-50%, -50%) scale(1.6);
+  background-color: #ffffff;
+  box-shadow: 0 0 12px #edae49, 0 0 25px #edae49;
 }
