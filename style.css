@@ -1,5 +1,11 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* Suavitat extra a mòbils i trackpads */
 }
 /* ==========================================================================
    1. PALETA DE COLORS I VARIABLES
@@ -88,9 +94,9 @@ header {
 }
 
 .nav-links a.active {
-  color: #00bcd4;
-  background-color: rgba(0, 188, 212, 0.12);
-  border-bottom: 3px solid #00bcd4;
+  color: var(--color-secondary);
+  background-color: rgba(237, 174, 73, 0.12);
+  border-bottom: 3px solid var(--color-secondary);
 }
 .logo-link {
   display: flex;
@@ -905,14 +911,14 @@ header {
   border-radius: 6px;
   font-family: inherit;
   font-size: 0.9rem;
-  color: var(--color-dark);
+  color: var(--bg-card);
   transition: all 0.25s ease;
   outline: none;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--color-dark);
+  border-color: var(--bg-card);
   box-shadow: 0 0 0 3px rgba(45, 49, 66, 0.12);
   background-color: #ffffff;
 }
