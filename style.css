@@ -907,18 +907,18 @@ header {
   width: 100%;
   padding: 0.55rem 0.85rem;
   background-color: var(--bg-main);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--col);
   border-radius: 6px;
   font-family: inherit;
   font-size: 0.9rem;
-  color: var(--bg-card);
+  color: var(--color-dark);
   transition: all 0.25s ease;
   outline: none;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--bg-card);
+  border-color: var(--color-dark);
   box-shadow: 0 0 0 3px rgba(45, 49, 66, 0.12);
   background-color: #ffffff;
 }
