@@ -51,7 +51,8 @@ const projectsDetails = {
       { title: "UX Flow & Low-Fidelity Wireframes", desc: "Initial paper and digital sketches mapping screen transitions, menu navigation, and core gameplay interaction loops.", img: "img/PM/wireframes.png" },
       { title: "Mid-Fidelity Layouts & Structure", desc: "Greybox iteration phase validating layout scaling, spatial padding, button placement, and typography hierarchy before styling.", img: "img/PM/midfi.png" },
       { title: "Color Palette & Theme Exploration", desc: "Color theory breakdown tailored for children, pairing high-contrast accessibility with vibrant environment-specific palettes.", img: "img/PM/palette.png" },
-      { title: "High-Fidelity Final Interfaces", desc: "Polished end-user UI featuring soft pastel gradients, rounded interactive components, and clear gameplay state feedback.", img: "img/PM/hifi.png" }
+      { title: "High-Fidelity Final Interfaces", desc: "Polished end-user UI featuring soft pastel gradients, rounded interactive components, and clear gameplay state feedback.", img: "img/PM/hifi.png" },
+      { title: "UI", desc: "User Interface Icons", img: "img/PM/UI.png" }
     ]
   },
   sonOfIthaca: {
