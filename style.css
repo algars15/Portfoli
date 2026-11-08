@@ -1101,67 +1101,99 @@ header {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 14px;
-  padding: 1.2rem;
+  padding: 1.25rem;
   margin: 1.5rem 0 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
   box-shadow: var(--shadow-sm);
 }
 
 .ui-slider-viewport {
   width: 100%;
-  background-color: #12151a;
+  height: 480px;
+  background-color: #0b0d12;
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  padding: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 280px;
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
 .ui-slider-viewport img {
   max-width: 100%;
-  max-height: 320px;
+  max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
   border-radius: 6px;
-  cursor: pointer;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
-  transform: translateX(0);
-  opacity: 1;
+  cursor: zoom-in;
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
 }
 
+/* Transicions adaptatives suaus */
 .slide-exit-left {
-  transform: translateX(-100px) !important;
   opacity: 0 !important;
+  transform: translateX(-30px) scale(0.96) !important;
 }
 
 .slide-enter-right {
-  transform: translateX(100px) !important;
   opacity: 0 !important;
+  transform: translateX(30px) scale(0.96) !important;
 }
 
 .slide-exit-right {
-  transform: translateX(100px) !important;
   opacity: 0 !important;
+  transform: translateX(30px) scale(0.96) !important;
 }
 
 .slide-enter-left {
-  transform: translateX(-100px) !important;
   opacity: 0 !important;
+  transform: translateX(-30px) scale(0.96) !important;
+}
+
+/* Barra de miniatures (Thumbnails) */
+.ui-thumbs-track {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.4rem 0.2rem;
+  scrollbar-width: thin;
+}
+
+.ui-thumb {
+  width: 64px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.5;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.ui-thumb:hover {
+  opacity: 0.85;
+}
+
+.ui-thumb.active {
+  opacity: 1;
+  border-color: var(--color-secondary, #edae49);
+  transform: translateY(-2px);
 }
 
 .ui-slider-info {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  padding: 0.5rem 0 0;
+  gap: 0.75rem;
+  padding: 0.25rem 0 0;
 }
 
 .ui-slider-header,
@@ -1169,6 +1201,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .ui-slider-header h4 {
@@ -1181,7 +1214,10 @@ header {
 .ui-slide-counter {
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--color-muted);
+  color: var(--color-secondary, #edae49);
+  background: rgba(237, 174, 73, 0.12);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
 }
 
 .ui-slider-info p {
@@ -1194,8 +1230,6 @@ header {
 .ui-slider-controls {
   display: flex;
   gap: 0.5rem;
-  justify-content: flex-end;
-  margin-top: 0.5rem;
 }
 
 .ui-slider-btn {
@@ -1216,8 +1250,9 @@ header {
 }
 
 .ui-slider-btn:hover {
-  background: var(--color-dark);
-  color: #ffffff;
+  background: var(--color-secondary, #edae49);
+  color: #000000;
+  border-color: var(--color-secondary, #edae49);
   transform: translateY(-2px);
 }
 

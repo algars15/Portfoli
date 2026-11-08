@@ -221,8 +221,6 @@ const projectsDetails = {
   }
 };
 
-let currentUiSlide = 0;
-
 function openProjectModal(projectId) {
   currentUiSlide = 0;
   const modalOverlay = document.getElementById("project-modal");
@@ -288,22 +286,40 @@ function openProjectModal(projectId) {
   let uiCaseStudyHtml = "";
   if (project.uiCaseStudy && project.uiCaseStudy.length > 0) {
     const firstSlide = project.uiCaseStudy[0];
+    
+    // Generem la galeria de miniatures inferiors (Thumbnails)
+    const thumbsHtml = project.uiCaseStudy.map((slide, idx) => `
+      <img 
+        src="${slide.img}" 
+        alt="Thumb ${idx + 1}" 
+        class="ui-thumb ${idx === 0 ? 'active' : ''}" 
+        onclick="goToUiSlide(${idx}, '${projectId}')"
+      />
+    `).join("");
+
     uiCaseStudyHtml = `
       <h3 class="modal-section-title">Showcase</h3>
       <div class="ui-slider-container">
         <div class="ui-slider-viewport">
           <img id="ui-slide-img" src="${firstSlide.img}" alt="Slide" onclick="window.open(this.src, '_blank')">
         </div>
+
+        <div class="ui-thumbs-track" id="ui-thumbs-track">
+          ${thumbsHtml}
+        </div>
+
         <div class="ui-slider-info">
           <div class="ui-slider-header">
             <h4 id="ui-slide-title">${firstSlide.title}</h4>
-            <span id="ui-slide-counter" class="ui-slide-counter">1 / ${project.uiCaseStudy.length}</span>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span id="ui-slide-counter" class="ui-slide-counter">1 / ${project.uiCaseStudy.length}</span>
+              <div class="ui-slider-controls">
+                <button class="ui-slider-btn prev" onclick="changeUiSlide(-1, '${projectId}')">&#10094;</button>
+                <button class="ui-slider-btn next" onclick="changeUiSlide(1, '${projectId}')">&#10095;</button>
+              </div>
+            </div>
           </div>
           ${firstSlide.desc ? `<p id="ui-slide-desc">${firstSlide.desc}</p>` : `<p id="ui-slide-desc" style="display: none;"></p>`}
-          <div class="ui-slider-controls">
-            <button class="ui-slider-btn prev" onclick="changeUiSlide(-1, '${projectId}')">&larr;</button>
-            <button class="ui-slider-btn next" onclick="changeUiSlide(1, '${projectId}')">&rarr;</button>
-          </div>
         </div>
       </div>`;
   }
@@ -334,6 +350,9 @@ function closeProjectModal(event) {
   }
 }
 
+// Variable global per al control de les diapositives del modal Showcase
+let currentUiSlide = 0;
+
 function toggleMoreProjects() {
   const moreProjects = document.getElementById("more-projects");
   const toggleBtn = document.getElementById("toggle-projects-btn");
@@ -347,7 +366,10 @@ function toggleMoreProjects() {
   }
 }
 
-function changeUiSlide(direction, projectId) {
+// ==========================================================================
+// CONTROL I NAVEGACIÓ DEL SHOWCASE (MODAL)
+// ==========================================================================
+function renderSlideState(newIndex, projectId, direction = 1) {
   const project = projectsDetails[projectId];
   if (!project || !project.uiCaseStudy) return;
 
@@ -356,22 +378,20 @@ function changeUiSlide(direction, projectId) {
   const titleElem = document.getElementById("ui-slide-title");
   const descElem = document.getElementById("ui-slide-desc");
 
-  const exitClass = direction === 1 ? "slide-exit-right" : "slide-exit-left";
-  const enterClass = direction === 1 ? "slide-enter-left" : "slide-enter-right";
+  // Si avancem (direction > 0): la foto vella surt cap a l'esquerra i la nova entra des de la dreta
+  // Si reculem (direction < 0): la foto vella surt cap a la dreta i la nova entra des de l'esquerra
+  const exitClass = direction > 0 ? "slide-exit-left" : "slide-exit-right";
+  const enterClass = direction > 0 ? "slide-enter-right" : "slide-enter-left";
 
-  if (imgElem) imgElem.classList.add(exitClass);
+  if (imgElem) imgElem.className = exitClass;
 
   setTimeout(() => {
-    currentUiSlide += direction;
-    if (currentUiSlide < 0) currentUiSlide = slides.length - 1;
-    if (currentUiSlide >= slides.length) currentUiSlide = 0;
-
+    currentUiSlide = newIndex;
     const current = slides[currentUiSlide];
 
     if (imgElem) {
-      imgElem.classList.remove(exitClass);
-      imgElem.classList.add(enterClass);
       imgElem.src = current.img;
+      imgElem.className = enterClass;
     }
 
     if (titleElem) titleElem.textContent = current.title;
@@ -389,15 +409,47 @@ function changeUiSlide(direction, projectId) {
       }
     }
 
+    // Actualitza la miniatura activa i la centra al viewport
+    const thumbs = document.querySelectorAll(".ui-thumb");
+    thumbs.forEach((thumb, idx) => {
+      const isActive = idx === currentUiSlide;
+      thumb.classList.toggle("active", isActive);
+      if (isActive) {
+        thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    });
+
     requestAnimationFrame(() => {
       setTimeout(() => {
-        if (imgElem) imgElem.classList.remove(enterClass);
-      }, 20);
+        if (imgElem) imgElem.className = "";
+      }, 30);
     });
-  }, 180);
+  }, 160);
 }
 
+function changeUiSlide(direction, projectId) {
+  const project = projectsDetails[projectId];
+  if (!project || !project.uiCaseStudy) return;
+  
+  let nextIndex = currentUiSlide + direction;
+  if (nextIndex < 0) nextIndex = project.uiCaseStudy.length - 1;
+  if (nextIndex >= project.uiCaseStudy.length) nextIndex = 0;
+
+  renderSlideState(nextIndex, projectId, direction);
+}
+
+function goToUiSlide(targetIndex, projectId) {
+  if (targetIndex === currentUiSlide) return;
+  const direction = targetIndex > currentUiSlide ? 1 : -1;
+  renderSlideState(targetIndex, projectId, direction);
+}
+
+// ==========================================================================
+// ESDEVENIMENT INICIAL DOMCONTENTLOADED
+// ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
+
+  // 1. Hover i Reproducció de Vídeos en Targetes
   const projectCards = document.querySelectorAll(".project-card");
   projectCards.forEach(card => {
     const video = card.querySelector(".project-card-video");
@@ -420,6 +472,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // 2. Transició Slides de Fons al Hero
   const bgSlides = document.querySelectorAll(".hero-bg-slide");
   if (bgSlides.length > 0) {
     let currentIndex = 0;
@@ -439,8 +492,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 5000);
   }
 
+  // 3. Animació de Scroll (Reveal d'elements incloent la secció #about)
   const elementsToAnimate = document.querySelectorAll(
-    "section:not(.about-hero), .project-card, .skill-card, .about-hero-card, .contact-card"
+    "#about, .project-card, .skill-card, .about-hero-card, .contact-card"
   );
 
   elementsToAnimate.forEach((el) => el.classList.add("reveal"));
@@ -457,6 +511,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   elementsToAnimate.forEach((el) => observer.observe(el));
 
+  // 4. Efecte Tilt 3D a les Targetes de Projectes
   projectCards.forEach((card) => {
     card.addEventListener("mousemove", (e) => {
       const rect = card.getBoundingClientRect();
@@ -477,10 +532,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // 5. Cursor Estrella Fugaç (Ocult directament en mòbils / pantalles tàctils)
   const cursorDot = document.querySelector(".star-cursor-dot");
   const canvas = document.getElementById("cursor-canvas");
 
-  if (cursorDot && canvas) {
+  const isMobile = window.matchMedia("(hover: none) and (pointer: coarse)").matches || window.innerWidth <= 768;
+
+  if (isMobile) {
+    if (cursorDot) cursorDot.remove();
+    if (canvas) canvas.remove();
+  } else if (cursorDot && canvas) {
     const ctx = canvas.getContext("2d");
     let points = [];
 
@@ -539,6 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // 6. Scrollspy per al Menú de Navegació
   const navLinks = document.querySelectorAll(".nav-links a");
   const allSections = document.querySelectorAll("section[id]");
 
@@ -559,5 +621,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-  
+
 });
