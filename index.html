@@ -230,11 +230,34 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
 
 <!-- Projects Section -->
   <section id="projects" class="section">
+     <!-- Graella dels 3 Projectes Principals -->
     <h2>Projects</h2>
-
-    <!-- Graella dels 3 Projectes Principals -->
     <div class="grid-projectes">
-        <!-- 3. Son of Ithaca Project Card -->
+ <!-- 1. ESTIK -->
+      <article class="project-card" onclick="openProjectModal('ESTIK')">
+        <div class="project-img-wrapper">
+          <img src="img/ESTIK/Logo.png" alt="ESTIK" class="project-img">
+          <video class="project-card-video" src="vid/ESTIK.mp4" muted loop playsinline preload="metadata"></video>
+          <span class="project-badge">GAME</span>
+        </div>
+        <div class="project-content">
+          <h3>ESTIK</h3>
+          <p class="project-desc">
+            <strong>Created for the 3Cat Premis Ludi 2026</strong>
+            ESTIK is an action and skill video game inspired by field hockey, where the player must overcome a series of dynamic levels. 
+            The goal of each stage is to guide the ball into the goal while overcoming a wide variety of environmental 
+            obstacles and challenges that will test the player's precision, trajectory calculation, and mental agility.
+            
+
+          </p>
+          <div class="project-footer">
+            <button class="btn-project btn-view" onclick="event.stopPropagation(); openProjectModal('ESTIK')">
+              View Project
+            </button>
+          </div>
+        </div>
+      </article>
+        <!-- 2. Son of Ithaca Project Card -->
       <article class="project-card" onclick="openProjectModal('sonOfIthaca')">
         <div class="project-img-wrapper">
           <img src="img/SonOfithaca/logo.png" alt="Son of Ithaca" class="project-img">
@@ -267,7 +290,9 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
         </div>
       </article>
 
-      <!-- 1. Odossea Project Card -->
+
+
+      <!-- 3. Odossea Project Card -->
       <article class="project-card" onclick="openProjectModal('odossea')">
         <div class="project-img-wrapper">
           <img src="img/Odossea/portada updated.png" alt="Odossea" class="project-img">
@@ -302,7 +327,13 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
         </div>
       </article>
 
-      <!-- 2. Paraules Màgiques Project Card -->
+    
+    </div>
+
+    <!-- Graella de projectes secundaris (amagat inicialment) -->
+    <div id="more-projects" class="grid-projectes more-projects-container" style="display: none;">
+
+       <!-- 4. Paraules Màgiques Project Card -->
       <article class="project-card" onclick="openProjectModal('paraulesMagiques')">
         <div class="project-img-wrapper">
           <img src="img/PM/Titol.png" alt="Paraules Màgiques" class="project-img">
@@ -324,14 +355,7 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
         </div>
       </article>
 
-     
-
-    </div>
-
-    <!-- Graella de projectes secundaris (amagat inicialment) -->
-    <div id="more-projects" class="grid-projectes more-projects-container" style="display: none;">
-      
-      <!-- 4. 3D Environment (ArtStation) -->
+      <!-- 5. 3D Environment (ArtStation) -->
       <article class="project-card" onclick="openProjectModal('medievalTavern')">
         <div class="project-img-wrapper">
           <img src="img/MEDIEVAL.png" alt="3D Environment Art" class="project-img">
@@ -350,7 +374,7 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
         </div>
       </article>
 
-      <!-- 5. Kim's Underworld -->
+      <!-- 6. Kim's Underworld -->
       <article class="project-card" onclick="openProjectModal('kimsUnderworld')">
         <div class="project-img-wrapper">
           <img src="img/kims.png" alt="Kim's Underworld" class="project-img">
@@ -391,7 +415,7 @@ On the technical side, I handle asset optimization, scene staging, and mechanics
     </div>
   </article>
 
-      <!-- 6. Racing Game -->
+      <!-- 8. Racing Game -->
       <article class="project-card" onclick="openProjectModal('racingGame')">
         <div class="project-img-wrapper">
           <img src="img/racing.png" alt="Racing Game" class="project-img">

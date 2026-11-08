@@ -28,6 +28,36 @@ const projectsDetails = {
       { title: "In-Game Options Overlay", img: "img/Odossea/ui-options-ingame.png" }
     ]
   },
+  ESTIK: {
+    title: "ESTIK",
+    role: "Level Designer, UI Artist & 3D Artist",
+    videoSrc: "vid/ESTIK.mp4",
+    teamSize: "4",
+    devTime: "1 month",
+    techStack: "Unity (C#)",
+    contributions: [
+      "Designed and developed almost all game levels, defining gameplay flow, level progression, dynamic obstacles, and trajectory mechanics.",
+      "Created the game’s overall setting and decorated environments to build cohesive, low-poly comedic stages.",
+      "Modeled and textured custom 3D assets and props using Maya and Substance 3D Painter.",
+      "Designed and structured the game's user interface and user experience, focusing on seamless diegetic menus and player interaction."
+    ],
+    team: [
+      { name: "Martí Mira", role: "Level Designer, UI Artist & 3D Artist" },
+      { name: "Marc Blánquez", role: "Programmer, 3D Artist & Level Designer" },
+      { name: "Oscar Alonso", role: "Programmer, Sound Programmer & Level Designer" },
+      { name: "Toni Llovera", role: "Programmer, UI Programmer & Technical Artist" }
+    ],
+    itchioLink: "https://oalonsoo.itch.io/estik",
+    uiCaseStudy: [
+      { title: "Main Menu Screen",  img: "img/ESTIK/embed.png" },
+      { title: "Meadow level", img:"img/ESTIK/cap1.png" },
+      { title: "Snow level",  img: "img/ESTIK/cap2.png" },
+      { title: "Forest level",  img: "img/ESTIK/cap3.png" },
+      { title: "Desert level",  img: "img/ESTIK/cap4.png" },
+      { title: "Lava level",  img: "img/ESTIK/cap5.png" },
+      { title: "UX/UI",  img: "img/ESTIK/cap6.png" }
+    ]
+  },
   paraulesMagiques: {
     title: "Paraules Màgiques",
     role: "UI/UX Designer",
