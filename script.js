@@ -39,7 +39,7 @@ const projectsDetails = {
       "Designed and developed almost all game levels, defining gameplay flow, level progression, dynamic obstacles, and trajectory mechanics.",
       "Created the game’s overall setting and decorated environments to build cohesive, low-poly comedic stages.",
       "Modeled and textured custom 3D assets and props using Maya and Substance 3D Painter.",
-      "Designed and structured the game's user interface and user experience, focusing on seamless diegetic menus and player interaction."
+      "Designed and structured the game's user interface and user experience."
     ],
     team: [
       { name: "Martí Mira", role: "Level Designer, UI Artist & 3D Artist" },
