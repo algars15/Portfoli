@@ -55,7 +55,8 @@ const projectsDetails = {
       { title: "Forest level",  img: "img/ESTIK/cap3.png" },
       { title: "Desert level",  img: "img/ESTIK/cap4.png" },
       { title: "Lava level",  img: "img/ESTIK/cap5.png" },
-      { title: "UX/UI",  img: "img/ESTIK/cap6.png" }
+      { title: "UX/UI",  img: "img/ESTIK/cap6.png" },
+      { title: "Level Menu",  img: "img/ESTIK/cap7.png" },
     ]
   },
   paraulesMagiques: {
