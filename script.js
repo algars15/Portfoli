@@ -185,6 +185,12 @@ const projectsDetails = {
       { name: "Manel Montes", role: "UI/UX Designer & Programmer" },
       { name: "Saüc Pellejero", role: "UI/UX Designer & Programmer" }
     ],
+    uiCaseStudy: [
+      {img: "img/racinggame/HNeaHa.png" },
+      {img: "img/racinggame/w7LOAg.png" },
+      {img: "img/racinggame/d8iQIE.png" }
+   
+    ],
     itchioLink: "https://mmiraa15.itch.io/racing-game"
   },
   godOfWarBlockout: {
