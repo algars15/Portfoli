@@ -70,7 +70,7 @@ const projectsDetails = {
     contributions: [
       "Game flow and dynamic word puzzle progression.",
       "Designed and structured clean, accessible UI layouts for browser gameplay.",
-      "Implemented responsive HTML5 canvas systems, gameplay feedback, and audio cues."
+      "Implemented responsive canvas systems, gameplay feedback, and audio cues."
     ],
     team: [
       { name: "Martí Mira", role: "UI/UX Designer" },
