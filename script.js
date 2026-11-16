@@ -226,7 +226,7 @@ const projectsDetails = {
   godOfWarBlockout: {
     title: "God of War (2018) – Level Blockout",
     role: "Level Designer & Blueprint Scripter",
-    trailerEmbedUrl: "https://www.youtube.com/embed/Ck3RebU0pN8",
+    videoSrc: "vid/GOW.mp4",
     coverImg: "img/gow-cover.png",
     teamSize: "2",
     devTime: "1 month",
