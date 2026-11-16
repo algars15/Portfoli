@@ -86,6 +86,35 @@ const projectsDetails = {
       { title: "UI", desc: "User Interface Icons", img: "img/PM/UI.png" }
     ]
   },
+
+    defendThemoon: {
+    title: "Defend the moon",
+    role: "VR Developer",
+    videoSrc: "vid/Defend_the_moon.mp4",
+    coverImg: "img/DTM/cap1.png",
+    teamSize: "4",
+    devTime: "1 week",
+    techStack: "Unity · Meta XR SDK · C# · Maya",
+    contributions: [
+      "Implemented physical VR interactions using Meta XR Building Blocks, including tactile joysticks, physical start buttons, and both Poke and Ray interactions.",
+    "Designed and built a multi-station cockpit featuring four control stations with diegetic world-space UI screens and live camera render textures."
+    ],
+    team: [
+      { name: "Martí Mira", role: "VR Developer" },
+      { name: "Marc Blánquez", role: "VR Developer" },
+      { name: "Arnau Balasch", role: "VR Developer" },
+      { name: "Pau Gutsens", role: "VR Developer" }
+    ],
+    
+    pdfLink: "doc/DefendTheMoon_Documentation.pdf",
+    buildLink: "https://github.com/MarcBlanquezPadilla/Activity-2---Meta-XR-Building-Blocks/releases/tag/v.1.0",
+     uiCaseStudy: [
+      { title: "Gameplay capture", img:"img/DTM/cap2.png" },
+      { title: "Gameplay capture",  img: "img/DTM/cap1.png" },
+      { title: "Gameplay capture",  img: "img/DTM/cap3.png" }
+    ]
+  },
+
   sonOfIthaca: {
     title: "Son of Ithaca",
     role: "3D Artist & Level Designer",
@@ -223,6 +252,7 @@ const projectsDetails = {
       { name: "Martí Mira", role: "Level Designer & Blueprint Scripter" },
       { name: "Marc Blánquez", role: "Level Designer & Blueprint Scripter" }
     ],
+    pdfLabel: "View LDD (PDF)",
     pdfLink: "doc/Level Design Document_MartiMira .pdf",
     buildLink: "https://drive.google.com/file/d/1JwXPFnCHvom1adk0abyI54cSpUwzAbNp/view?usp=sharing"
   }
@@ -284,7 +314,8 @@ function openProjectModal(projectId) {
     actionButtonsHtml += `<a href="${project.artstationLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-view">View on ArtStation</a>`;
   }
   if (project.pdfLink) {
-    actionButtonsHtml += `<a href="${project.pdfLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-view">View LDD (PDF)</a>`;
+    const docText = project.pdfLabel || "View Documentation";
+    actionButtonsHtml += `<a href="${project.pdfLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-view">${docText}</a>`;
   }
   if (project.buildLink) {
     actionButtonsHtml += `<a href="${project.buildLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-itch">Download Build</a>`;
