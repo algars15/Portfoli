@@ -1,7 +1,78 @@
 const projectsDetails = {
+  ESTIK: {
+    title: "ESTIK",
+    role: "Level Designer, UI Artist & 3D Artist",
+    modalBgImg:"img/ESTIK/bkg.png",
+    videoSrc: "vid/ESTIK.mp4",
+    teamSize: "4",
+    devTime: "1 month",
+    techStack: "Unity (C#)",
+    contributions: [
+      "Designed and developed almost all game levels, defining gameplay flow, level progression, dynamic obstacles, and trajectory mechanics.",
+      "Created the game’s overall setting and decorated environments to build cohesive, low-poly comedic stages.",
+      "Modeled and textured custom 3D assets and props using Maya and Substance 3D Painter.",
+      "Designed and structured the game's user interface and user experience."
+    ],
+    team: [
+      { name: "Martí Mira", role: "Level Designer, UI Artist & 3D Artist", github: "https://github.com/algars15" },
+      { name: "Marc Blánquez", role: "Programmer, 3D Artist & Level Designer", github:"https://github.com/MarcBlanquezPadilla" },
+      { name: "Oscar Alonso", role: "Programmer, Sound Programmer & Level Designer", github:"https://github.com/oscaralonsoo" },
+      { name: "Toni Llovera", role: "Programmer, UI Programmer & Technical Artist", github:"https://github.com/ToniLlovera" }
+    ],
+    itchioLink: "https://oalonsoo.itch.io/estik",
+    uiCaseStudy: [
+      { title: "Main Menu Screen",  img: "img/ESTIK/embed.png" },
+      { title: "Meadow level", img:"img/ESTIK/cap1.png" },
+      { title: "Snow level",  img: "img/ESTIK/cap2.png" },
+      { title: "Forest level",  img: "img/ESTIK/cap3.png" },
+      { title: "Desert level",  img: "img/ESTIK/cap4.png" },
+      { title: "Lava level",  img: "img/ESTIK/cap5.png" },
+      { title: "UX/UI",  img: "img/ESTIK/cap6.png" },
+      { title: "Level Menu",  img: "img/ESTIK/cap7.png" },
+    ]
+  },
+
+   sonOfIthaca: {
+    title: "Son of Ithaca",
+    role: "3D Artist & Level Designer",
+    modalBgImg: "img/SonOfithaca/cap11.png",
+    award: {
+      title: "Nominee: Best Academic Game",
+      event: "IndieDevDay · SAGA Game Fest 2026",
+      logos: ["img/IndieDevDay.png"]
+    },
+    videoSrc: "vid/SonOfIthaca.mp4",
+    teamSize: "31",
+    devTime: "4 months",
+    techStack: "Wave Engine (Own Engine)",
+    contributions: [
+      "Designed and blocked out the initial level layouts and progression flow for both Level 1 and Level 2.",
+      "Transitioned to the Art Department to model, texture, and optimize environment props and modular assets.",
+      "Modeled and animated the three interactive puzzle statues central to the core gameplay loop.",
+      "Executed set dressing and environmental staging across Levels 1 and 2 to significantly enhance visual fidelity.",
+      "Designed UI gameplay elements, including the health bar interface for the final boss encounter."
+    ],
+    uiCaseStudy: [
+      { title: "Game Capture", img: "img/SonOfithaca/cap11.png" },
+      { title: "Game Capture", img: "img/SonOfithaca/cap12.png" },
+      { title: "Game Capture", img: "img/SonOfithaca/cap13.png" },
+      { title: "Game Capture", img: "img/SonOfithaca/cap14.png" },
+      { title: "Catalyst statue", img: "img/SonOfithaca/cap1.png" },
+      { title: "Activating Statue", img: "img/SonOfithaca/cap2.png" },
+      { title: "Enviroment Decoration", img: "img/SonOfithaca/cap3.png" },
+      { title: "Modular bridge", img: "img/SonOfithaca/cap6.png" },
+      { title: "Boss bar", img: "img/SonOfithaca/cap10.png" },
+      { title: "Pression plate", img: "img/SonOfithaca/cap5.png" },
+      { title: "Statue Concepts", img: "img/SonOfithaca/cap8.png" }
+    ],
+    team: [{ name: "Nobody Games Studio", role: "Development & Production", github:"https://github.com/NobodyGamesStudio" }],
+    itchioLink: "https://nobody-games-studio.itch.io/son-of-ithaca"
+  },
+
   odossea: {
     title: "Odossea",
     role: "Level Designer & Game Designer",
+    modalBgImg:"img/Odossea/bkg.png",
     award: {
       title: "Socialpoint Best Technology Award",
       event: "9th Gran CITM Game Jam",
@@ -34,40 +105,11 @@ const projectsDetails = {
       { title: "In-Game Options Overlay", img: "img/Odossea/ui-options-ingame.png" }
     ]
   },
-  ESTIK: {
-    title: "ESTIK",
-    role: "Level Designer, UI Artist & 3D Artist",
-    videoSrc: "vid/ESTIK.mp4",
-    teamSize: "4",
-    devTime: "1 month",
-    techStack: "Unity (C#)",
-    contributions: [
-      "Designed and developed almost all game levels, defining gameplay flow, level progression, dynamic obstacles, and trajectory mechanics.",
-      "Created the game’s overall setting and decorated environments to build cohesive, low-poly comedic stages.",
-      "Modeled and textured custom 3D assets and props using Maya and Substance 3D Painter.",
-      "Designed and structured the game's user interface and user experience."
-    ],
-    team: [
-      { name: "Martí Mira", role: "Level Designer, UI Artist & 3D Artist", github: "https://github.com/algars15" },
-      { name: "Marc Blánquez", role: "Programmer, 3D Artist & Level Designer", github:"https://github.com/MarcBlanquezPadilla" },
-      { name: "Oscar Alonso", role: "Programmer, Sound Programmer & Level Designer", github:"https://github.com/oscaralonsoo" },
-      { name: "Toni Llovera", role: "Programmer, UI Programmer & Technical Artist", github:"https://github.com/ToniLlovera" }
-    ],
-    itchioLink: "https://oalonsoo.itch.io/estik",
-    uiCaseStudy: [
-      { title: "Main Menu Screen",  img: "img/ESTIK/embed.png" },
-      { title: "Meadow level", img:"img/ESTIK/cap1.png" },
-      { title: "Snow level",  img: "img/ESTIK/cap2.png" },
-      { title: "Forest level",  img: "img/ESTIK/cap3.png" },
-      { title: "Desert level",  img: "img/ESTIK/cap4.png" },
-      { title: "Lava level",  img: "img/ESTIK/cap5.png" },
-      { title: "UX/UI",  img: "img/ESTIK/cap6.png" },
-      { title: "Level Menu",  img: "img/ESTIK/cap7.png" },
-    ]
-  },
+  
   paraulesMagiques: {
     title: "Paraules Màgiques",
     role: "UI/UX Designer",
+    modalBgImg:"img/PM/bkg.png",
     videoSrc: "vid/ParaulesMagiques.mp4",
     coverImg: "img/PM/Titol.png",
     teamSize: "3",
@@ -121,41 +163,6 @@ const projectsDetails = {
     ]
   },
 
-  sonOfIthaca: {
-    title: "Son of Ithaca",
-    role: "3D Artist & Level Designer",
-    award: {
-      title: "Nominee: Best Academic Game",
-      event: "IndieDevDay · SAGA Game Fest 2026",
-      logos: ["img/IndieDevDay.png"]
-    },
-    videoSrc: "vid/SonOfIthaca.mp4",
-    teamSize: "31",
-    devTime: "4 months",
-    techStack: "Wave Engine (Own Engine)",
-    contributions: [
-      "Designed and blocked out the initial level layouts and progression flow for both Level 1 and Level 2.",
-      "Transitioned to the Art Department to model, texture, and optimize environment props and modular assets.",
-      "Modeled and animated the three interactive puzzle statues central to the core gameplay loop.",
-      "Executed set dressing and environmental staging across Levels 1 and 2 to significantly enhance visual fidelity.",
-      "Designed UI gameplay elements, including the health bar interface for the final boss encounter."
-    ],
-    uiCaseStudy: [
-      { title: "Game Capture", img: "img/SonOfithaca/cap11.png" },
-      { title: "Game Capture", img: "img/SonOfithaca/cap12.png" },
-      { title: "Game Capture", img: "img/SonOfithaca/cap13.png" },
-      { title: "Game Capture", img: "img/SonOfithaca/cap14.png" },
-      { title: "Catalyst statue", img: "img/SonOfithaca/cap1.png" },
-      { title: "Activating Statue", img: "img/SonOfithaca/cap2.png" },
-      { title: "Enviroment Decoration", img: "img/SonOfithaca/cap3.png" },
-      { title: "Modular bridge", img: "img/SonOfithaca/cap6.png" },
-      { title: "Boss bar", img: "img/SonOfithaca/cap10.png" },
-      { title: "Pression plate", img: "img/SonOfithaca/cap5.png" },
-      { title: "Statue Concepts", img: "img/SonOfithaca/cap8.png" }
-    ],
-    team: [{ name: "Nobody Games Studio", role: "Development & Production", github:"https://github.com/NobodyGamesStudio" }],
-    itchioLink: "https://nobody-games-studio.itch.io/son-of-ithaca"
-  },
   medievalTavern: {
     title: "Medieval Tavern Environment",
     role: "Project Lead & Environment Artist",
@@ -209,34 +216,6 @@ const projectsDetails = {
     team: [{ name: "EVER REST GAMES", role: "Production, Art & Programming" }],
     itchioLink: "https://mmiraa15.itch.io/kims-underworld"
   },
-  racingGame: {
-    title: "Racing Game",
-    role: "UI/UX Designer & Programmer",
-    videoSrc: "vid/Racing-Game.mp4",
-    coverImg: "img/racing.png",
-    teamSize: "5",
-    devTime: "3 months",
-    techStack: "C++ (Raylib, Box2D)",
-    contributions: [
-      "Designed and implemented clean, responsive in-game UI layouts and real-time HUD elements optimized for fast readability.",
-      "Programmed a sequential checkpoint tracking system using Box2D sensors to manage lap completion, split times, and race progression accurately.",
-      "Engineered vehicle-environment collision responses and tuned physical properties (friction, restitution, and track boundaries) in Box2D for responsive arcade handling."
-    ],
-    team: [
-      { name: "Martí Mira", role: "UI/UX Designer & Programmer", github: "https://github.com/algars15" },
-      { name: "Arnau Balasch", role: "UI/UX Designer & Programmer", github:"https://github.com/Balar05" },
-      { name: "Marc Blánquez", role: "Lead Programmer", github:"https://github.com/MarcBlanquezPadilla" },
-      { name: "Manel Montes", role: "UI/UX Designer & Programmer", github: "https://github.com/ManiManetess" },
-      { name: "Saüc Pellejero", role: "UI/UX Designer & Programmer", github:"https://github.com/ZReiNa" }
-    ],
-    uiCaseStudy: [
-      {img: "img/racinggame/HNeaHa.png" },
-      {img: "img/racinggame/w7LOAg.png" },
-      {img: "img/racinggame/d8iQIE.png" }
-   
-    ],
-    itchioLink: "https://mmiraa15.itch.io/racing-game"
-  },
   godOfWarBlockout: {
     title: "God of War – Level Blockout",
     role: "Level Designer & Blueprint Scripter",
@@ -269,6 +248,34 @@ const projectsDetails = {
     pdfLabel: "View LDD (PDF)",
     pdfLink: "doc/Level Design Document_MartiMira .pdf",
     buildLink: "https://drive.google.com/file/d/1JwXPFnCHvom1adk0abyI54cSpUwzAbNp/view?usp=sharing"
+  },
+  racingGame: {
+    title: "Racing Game",
+    role: "UI/UX Designer & Programmer",
+    videoSrc: "vid/Racing-Game.mp4",
+    coverImg: "img/racing.png",
+    teamSize: "5",
+    devTime: "3 months",
+    techStack: "C++ (Raylib, Box2D)",
+    contributions: [
+      "Designed and implemented clean, responsive in-game UI layouts and real-time HUD elements optimized for fast readability.",
+      "Programmed a sequential checkpoint tracking system using Box2D sensors to manage lap completion, split times, and race progression accurately.",
+      "Engineered vehicle-environment collision responses and tuned physical properties (friction, restitution, and track boundaries) in Box2D for responsive arcade handling."
+    ],
+    team: [
+      { name: "Martí Mira", role: "UI/UX Designer & Programmer", github: "https://github.com/algars15" },
+      { name: "Arnau Balasch", role: "UI/UX Designer & Programmer", github:"https://github.com/Balar05" },
+      { name: "Marc Blánquez", role: "Lead Programmer", github:"https://github.com/MarcBlanquezPadilla" },
+      { name: "Manel Montes", role: "UI/UX Designer & Programmer", github: "https://github.com/ManiManetess" },
+      { name: "Saüc Pellejero", role: "UI/UX Designer & Programmer", github:"https://github.com/ZReiNa" }
+    ],
+    uiCaseStudy: [
+      {img: "img/racinggame/HNeaHa.png" },
+      {img: "img/racinggame/w7LOAg.png" },
+      {img: "img/racinggame/d8iQIE.png" }
+   
+    ],
+    itchioLink: "https://mmiraa15.itch.io/racing-game"
   }
 };
 
@@ -281,8 +288,25 @@ function openProjectModal(projectId) {
   const modalContainer = modalOverlay.querySelector(".modal-container");
   if (modalContainer) modalContainer.scrollTop = 0;
 
+  const projectKeys = Object.keys(projectsDetails);
+  const currentIndex = projectKeys.indexOf(projectId);
   const project = projectsDetails[projectId];
   if (!project) return;
+
+  const prevIndex = (currentIndex - 1 + projectKeys.length) % projectKeys.length;
+  const nextIndex = (currentIndex + 1) % projectKeys.length;
+  const prevKey = projectKeys[prevIndex];
+  const nextKey = projectKeys[nextIndex];
+  const prevProject = projectsDetails[prevKey];
+  const nextProject = projectsDetails[nextKey];
+
+ if (project.modalBgImg) {
+    modalOverlay.style.backgroundImage = `linear-gradient(rgba(10, 12, 18, 0.22), rgba(10, 12, 18, 0.35)), url('${project.modalBgImg}')`;
+    modalOverlay.classList.add("has-custom-bg");
+  } else {
+    modalOverlay.style.backgroundImage = "none";
+    modalOverlay.classList.remove("has-custom-bg");
+  }
 
   let awardHtml = "";
   if (project.award) {
@@ -362,23 +386,50 @@ function openProjectModal(projectId) {
 
   let actionButtonsHtml = "";
   if (project.itchioLink) {
-    actionButtonsHtml += `<a href="${project.itchioLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-itch">Play on Itch.io</a>`;
+    actionButtonsHtml += `
+      <a href="${project.itchioLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-itch">
+        <svg width="18" height="18" viewBox="0 0 245.371 220.736" fill="currentColor" aria-hidden="true">
+          <path d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.264-3.763-4.496-6.152-1.23 2.39-2.636 4.332-4.496 6.152a28.482 28.482 0 0 1-19.948 8.126c-3.586 0-7.018-.675-10.22-1.894v86.783c0 24.69 17.508 42.198 42.198 42.198h114.23c24.69 0 42.198-17.508 42.198-42.198V79.965c-3.202 1.22-6.634 1.894-10.22 1.894a28.482 28.482 0 0 1-19.948-8.126c-1.86-1.82-3.266-3.763-4.496-6.152-1.23 2.39-2.638 4.332-4.496 6.152a28.482 28.482 0 0 1-19.948 8.126c-7.75 0-14.778-3.108-19.906-8.122a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.122c-7.748 0-14.777-3.108-19.905-8.122a27.99 27.99 0 0 1-4.737-6.155zm-20.404 26.491h35.38c6.382 0 11.56 5.178 11.56 11.56v11.56h17.34v-11.56c0-6.382 5.178-11.56 11.56-11.56h35.38c6.382 0 11.56 5.178 11.56 11.56v46.24c0 6.382-5.178 11.56-11.56 11.56h-23.12v-17.34h-57.8v17.34H76.78c-6.382 0-11.56-5.178-11.56-11.56v-46.24c0-6.382 5.178-11.56 11.56-11.56zm11.56 17.34v23.12h17.34v-23.12H88.34zm75.14 0v23.12h17.34v-23.12h-17.34z"/>
+        </svg>
+        <span>Play on Itch.io</span>
+      </a>`;
   }
   if (project.artstationLink) {
-    actionButtonsHtml += `<a href="${project.artstationLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-artstation">View on ArtStation</a>`;
+    actionButtonsHtml += `
+      <a href="${project.artstationLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-artstation">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M1.77 16.88l1.73 3a2.07 2.07 0 0 0 1.83 1.09h11.34l-2.37-4.09H1.77zm20.46-.03a2.05 2.05 0 0 0-.31-1.08L15.17 4.08A2.07 2.07 0 0 0 13.36 3H9.8l10.35 17.94 1.64-2.84c.32-.55.44-1.02.44-1.25zM12.8 14.23L8.27 6.38l-4.53 7.85h9.06z"/>
+        </svg>
+        <span>View on ArtStation</span>
+      </a>`;
   }
-  if (project.pdfLink) {
+ if (project.pdfLink) {
     const docText = project.pdfLabel || "View Documentation";
-    actionButtonsHtml += `<a href="${project.pdfLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-view">${docText}</a>`;
+    actionButtonsHtml += `
+      <a href="${project.pdfLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-view">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="16" y1="13" x2="8" y2="13"/>
+          <line x1="16" y1="17" x2="8" y2="17"/>
+          <polyline points="10 9 9 9 8 9"/>
+        </svg>
+        <span>${docText}</span>
+      </a>`;
   }
   if (project.buildLink) {
-    actionButtonsHtml += `<a href="${project.buildLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-github">Download Build</a>`;
+    actionButtonsHtml += `
+      <a href="${project.buildLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-github">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+        </svg>
+        <span>Download Build</span>
+      </a>`;
   }
 
   let uiCaseStudyHtml = "";
   if (project.uiCaseStudy && project.uiCaseStudy.length > 0) {
     const firstSlide = project.uiCaseStudy[0];
-    
     const thumbsHtml = project.uiCaseStudy.map((slide, idx) => `
       <img 
         src="${slide.img}" 
@@ -394,11 +445,9 @@ function openProjectModal(projectId) {
         <div class="ui-slider-viewport">
           <img id="ui-slide-img" src="${firstSlide.img}" alt="Slide" onclick="window.open(this.src, '_blank')">
         </div>
-
         <div class="ui-thumbs-track" id="ui-thumbs-track">
           ${thumbsHtml}
         </div>
-
         <div class="ui-slider-info">
           <div class="ui-slider-header">
             <h4 id="ui-slide-title">${firstSlide.title}</h4>
@@ -414,6 +463,25 @@ function openProjectModal(projectId) {
         </div>
       </div>`;
   }
+
+  // Navegació inferior entre projectes
+  const projectNavHtml = `
+    <div class="modal-project-nav">
+      <button type="button" class="btn-modal-nav prev" onclick="openProjectModal('${prevKey}')">
+        <span class="nav-arrow">&#10094;</span>
+        <div class="nav-text">
+          <span class="nav-label">Previous Project</span>
+          <span class="nav-title">${prevProject.title}</span>
+        </div>
+      </button>
+      <button type="button" class="btn-modal-nav next" onclick="openProjectModal('${nextKey}')">
+        <div class="nav-text">
+          <span class="nav-label">Next Project</span>
+          <span class="nav-title">${nextProject.title}</span>
+        </div>
+        <span class="nav-arrow">&#10095;</span>
+      </button>
+    </div>`;
 
   const modalBody = document.getElementById("modal-body");
   modalBody.innerHTML = `
@@ -433,12 +501,17 @@ function openProjectModal(projectId) {
     ${teamHtml}
     <div class="modal-footer">
       ${actionButtonsHtml}
-    </div>`;
+    </div>
+    ${projectNavHtml}`;
 }
 
 function closeProjectModal(event) {
-  if (!event || event.target.id === "project-modal" || event.target.classList.contains("modal-close")) {
-    document.getElementById("project-modal").style.display = "none";
+  // Només es tanca si es crida directament (ex. tecla Escape) o des del botó X
+  if (!event || event.target.closest(".modal-close")) {
+    const modalOverlay = document.getElementById("project-modal");
+    modalOverlay.style.display = "none";
+    modalOverlay.style.backgroundImage = "none";
+    modalOverlay.classList.remove("has-custom-bg");
     document.body.style.overflow = "auto";
     document.getElementById("modal-body").innerHTML = "";
   }
