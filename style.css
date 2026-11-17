@@ -652,14 +652,14 @@ header {
 
 .modal-container {
   background: var(--bg-main);
-  width: 100%;
-  max-width: 820px;
-  max-height: 88vh;
-  border-radius: 14px;
+  width: 92%;               
+  max-width: 1100px;        
+  max-height: 90vh;         
+  border-radius: 16px;
   overflow-y: auto;
   position: relative;
-  padding: 2.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem 3rem;     
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   border: 1px solid var(--border-color);
 }
 
@@ -719,10 +719,39 @@ header {
   margin-bottom: 0.6rem;
 }
 
-.modal-subtitle {
-  color: var(--color-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+.modal-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--color-dark); /* Blau fosc del portfoli */
+  color: var(--bg-main);
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  margin-top: 0.4rem;
+  margin-bottom: 1.1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.modal-role-badge .role-label {
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  background-color: var(--color-secondary); /* Etiqueta groc mostassa */
+  color: var(--color-dark);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+}
+
+.modal-role-badge .role-value {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.modal-award-card {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
 }
 
 .modal-section-title {
@@ -1163,7 +1192,7 @@ header {
 
 .ui-slider-viewport {
   width: 100%;
-  height: 480px;
+  height: 540px;
   background-color: #0b0d12;
   border: 1px solid var(--border-color);
   border-radius: 10px;

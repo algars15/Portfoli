@@ -2,7 +2,11 @@ const projectsDetails = {
   odossea: {
     title: "Odossea",
     role: "Level Designer & Game Designer",
-    award: " Best Technology Award – 9th Gran CITM Game Jam",
+    award: {
+      title: "Socialpoint Best Technology Award",
+      event: "9th Gran CITM Game Jam",
+      logos: ["img/CitmGameJam.png", "img/socialpoint.png"]
+    },
     videoSrc: "vid/Odossea.mp4",
     teamSize: "5",
     devTime: "1 week",
@@ -21,8 +25,10 @@ const projectsDetails = {
     ],
     itchioLink: "https://torratsgames.itch.io/odossea",
     uiCaseStudy: [
-      { title: "Vector UI Kit & Scalable Assets", desc: "Interactive button states, and audio control components designed with soft pastel gradients for resolution independence.", img: "img/Odossea/ui-kit.png" },
-      { title: "Menu Hierarchy & Settings Layouts", desc: "Structured option panels for Graphics and Audio adjustments, prioritizing intuitive spatial navigation and clear input feedback.", img: "img/Odossea/ui-panels.png" },
+      { title: "Game Capture", img: "img/Odossea/cap1.png" },
+      { title: "Game Capture", img: "img/Odossea/cap2.png" },
+      { title: "UI Kit ", img: "img/Odossea/ui-kit.png" },
+      { title: "Menu Hierarchy & Settings Layouts", img: "img/Odossea/ui-panels.png" },
       { title: "Game Menu", img: "img/Odossea/gameMenu.png" },
       { title: "In-Game Pause Overlay", img: "img/Odossea/ui-paused-ingame.png" },
       { title: "In-Game Options Overlay", img: "img/Odossea/ui-options-ingame.png" }
@@ -118,7 +124,11 @@ const projectsDetails = {
   sonOfIthaca: {
     title: "Son of Ithaca",
     role: "3D Artist & Level Designer",
-    award: " Nominee: Best Academic Game – IndieDevDay / SAGA Game Fest 2026",
+    award: {
+      title: "Nominee: Best Academic Game",
+      event: "IndieDevDay · SAGA Game Fest 2026",
+      logos: ["img/IndieDevDay.png"]
+    },
     videoSrc: "vid/SonOfIthaca.mp4",
     teamSize: "31",
     devTime: "4 months",
@@ -131,6 +141,10 @@ const projectsDetails = {
       "Designed UI gameplay elements, including the health bar interface for the final boss encounter."
     ],
     uiCaseStudy: [
+      { title: "Game Capture", img: "img/SonOfithaca/cap11.png" },
+      { title: "Game Capture", img: "img/SonOfithaca/cap12.png" },
+      { title: "Game Capture", img: "img/SonOfithaca/cap13.png" },
+      { title: "Game Capture", img: "img/SonOfithaca/cap14.png" },
       { title: "Catalyst statue", img: "img/SonOfithaca/cap1.png" },
       { title: "Activating Statue", img: "img/SonOfithaca/cap2.png" },
       { title: "Enviroment Decoration", img: "img/SonOfithaca/cap3.png" },
@@ -224,7 +238,7 @@ const projectsDetails = {
     itchioLink: "https://mmiraa15.itch.io/racing-game"
   },
   godOfWarBlockout: {
-    title: "God of War (2018) – Level Blockout",
+    title: "God of War – Level Blockout",
     role: "Level Designer & Blueprint Scripter",
     videoSrc: "vid/GOW.mp4",
     coverImg: "img/gow-cover.png",
@@ -270,6 +284,26 @@ function openProjectModal(projectId) {
   const project = projectsDetails[projectId];
   if (!project) return;
 
+  let awardHtml = "";
+  if (project.award) {
+    if (typeof project.award === "object") {
+      const logosHtml = (project.award.logos || [])
+        .map(logo => `<img src="${logo}" alt="Award Logo" class="award-logo">`)
+        .join("");
+
+      awardHtml = `
+        <div class="project-award-card modal-award-card">
+          ${logosHtml}
+          <div class="award-text">
+            <span class="award-badge-title">${project.award.title}</span>
+            <span class="award-event">${project.award.event}</span>
+          </div>
+        </div>`;
+    } else {
+      awardHtml = `<div class="project-award-badge">${project.award}</div>`;
+    }
+  }
+
   let mediaHtml = "";
   if (project.videoSrc) {
     mediaHtml = `
@@ -297,7 +331,7 @@ function openProjectModal(projectId) {
       </div>`;
   }
 
- let teamHtml = "";
+  let teamHtml = "";
   if (project.team && project.team.length > 0) {
     teamHtml = `
       <h3 class="modal-section-title">Team & Credits</h3>
@@ -331,21 +365,20 @@ function openProjectModal(projectId) {
     actionButtonsHtml += `<a href="${project.itchioLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-itch">Play on Itch.io</a>`;
   }
   if (project.artstationLink) {
-    actionButtonsHtml += `<a href="${project.artstationLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-view">View on ArtStation</a>`;
+    actionButtonsHtml += `<a href="${project.artstationLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-artstation">View on ArtStation</a>`;
   }
   if (project.pdfLink) {
     const docText = project.pdfLabel || "View Documentation";
     actionButtonsHtml += `<a href="${project.pdfLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-view">${docText}</a>`;
   }
   if (project.buildLink) {
-    actionButtonsHtml += `<a href="${project.buildLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-itch">Download Build</a>`;
+    actionButtonsHtml += `<a href="${project.buildLink}" target="_blank" rel="noopener noreferrer" class="btn-project btn-github">Download Build</a>`;
   }
 
   let uiCaseStudyHtml = "";
   if (project.uiCaseStudy && project.uiCaseStudy.length > 0) {
     const firstSlide = project.uiCaseStudy[0];
     
-    // Generem la galeria de miniatures inferiors (Thumbnails)
     const thumbsHtml = project.uiCaseStudy.map((slide, idx) => `
       <img 
         src="${slide.img}" 
@@ -385,8 +418,11 @@ function openProjectModal(projectId) {
   const modalBody = document.getElementById("modal-body");
   modalBody.innerHTML = `
     <h2 class="modal-title">${project.title}</h2>
-    ${project.award ? `<div class="project-award-badge">${project.award}</div>` : ""}
-    <p class="modal-subtitle"><strong>Role:</strong> ${project.role}</p>
+    <div class="modal-role-badge">
+      <span class="role-label">Role</span>
+      <span class="role-value">${project.role}</span>
+    </div>
+    ${awardHtml}
     ${mediaHtml}
     ${metaBarHtml}
     <h3 class="modal-section-title">My Key Contributions</h3>
@@ -395,7 +431,7 @@ function openProjectModal(projectId) {
     </ul>
     ${uiCaseStudyHtml}
     ${teamHtml}
-    <div class="modal-footer" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+    <div class="modal-footer">
       ${actionButtonsHtml}
     </div>`;
 }
