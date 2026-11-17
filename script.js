@@ -138,6 +138,7 @@ const projectsDetails = {
     defendThemoon: {
     title: "Defend the moon",
     role: "VR Developer",
+    modalBgImg:"img/DTM/bkg.png",
     videoSrc: "vid/Defend_the_moon.mp4",
     coverImg: "img/DTM/cap1.png",
     teamSize: "4",
@@ -166,6 +167,7 @@ const projectsDetails = {
   medievalTavern: {
     title: "Medieval Tavern Environment",
     role: "Project Lead & Environment Artist",
+    modalBgImg:"img/tavern/cap3.png",
     videoSrc: "vid/Tavern.mp4",
     teamSize: "4",
     devTime: "3 weeks",
@@ -197,6 +199,7 @@ const projectsDetails = {
   kimsUnderworld: {
     title: "Kim's Underworld",
     role: "Level Designer",
+    modalBgImg:"img/kims.png",
     videoSrc: "vid/KimsUnderworld.mp4",
     teamSize: "19",
     devTime: "4 months",
@@ -219,6 +222,7 @@ const projectsDetails = {
   godOfWarBlockout: {
     title: "God of War – Level Blockout",
     role: "Level Designer & Blueprint Scripter",
+    modalBgImg:"img/GOW/bkg.png",
     videoSrc: "vid/GOW.mp4",
     coverImg: "img/gow-cover.png",
     teamSize: "2",
@@ -252,6 +256,7 @@ const projectsDetails = {
   racingGame: {
     title: "Racing Game",
     role: "UI/UX Designer & Programmer",
+    modalBgImg:"img/racinggame/bkg.png",
     videoSrc: "vid/Racing-Game.mp4",
     coverImg: "img/racing.png",
     teamSize: "5",
