@@ -764,33 +764,85 @@ header {
 }
 
 .member-role {
-  font-size: 0.78rem;
-  color: var(--color-muted);
+  font-size: 0.8rem;
+  color: rgba(45, 49, 66, 0.82);
+  font-weight: 500;
+  line-height: 1.35;
+  margin-top: 0.15rem;
 }
 
+/* ==========================================================================
+   BOTONS DEL PEU DEL MODAL (COHERÈNCIA VISUAL TOTAL)
+   ========================================================================== */
 .modal-footer {
-  margin-top: 2rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
-.btn-itch {
-  background-color: #fa5c5c;
-  color: #ffffff;
+.modal-footer .btn-project {
+  flex: 1 1 200px;
+  max-width: 260px;
+  min-height: 46px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
-  padding: 0.75rem 1.4rem;
-  border-radius: 6px;
+  gap: 0.5rem;
+  text-align: center;
   text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 0.92rem;
-  transition: background-color 0.2s ease;
+  line-height: 1.2;
+  box-sizing: border-box;
+  margin: 0;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn-itch:hover {
+.modal-footer .btn-project:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Itch.io */
+.modal-footer .btn-itch {
+  background-color: #fa5c5c;
+  color: #ffffff;
+}
+.modal-footer .btn-itch:hover {
   background-color: #e04444;
+}
+
+/* Documentació / PDF (Blau fosc del portfoli) */
+.modal-footer .btn-view {
+  background-color: var(--color-dark);
+  color: var(--bg-main);
+}
+.modal-footer .btn-view:hover {
+  background-color: #3d4257;
+}
+
+/* GitHub / Build */
+.modal-footer .btn-github {
+  background-color: #24292e;
+  color: #ffffff;
+}
+.modal-footer .btn-github:hover {
+  background-color: #363d44;
+}
+
+/* ArtStation */
+.modal-footer .btn-artstation {
+  background-color: #13aff0;
+  color: #ffffff;
+}
+.modal-footer .btn-artstation:hover {
+  background-color: #0e96cf;
 }
 
 .project-meta-bar {
@@ -1325,4 +1377,82 @@ body.cursor-hover .star-cursor-dot {
     opacity: 0 !important;
     pointer-events: none !important;
   }
+}
+/* ==========================================================================
+   TARGETES DE COL·LABORADORS 
+   ========================================================================== */
+.team-member {
+  background-color: var(--color-dark); 
+  border: 1px solid rgba(45, 49, 66, 0.2);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.member-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--bg-main); 
+  transition: color 0.2s ease;
+}
+
+.member-role {
+  font-size: 0.8rem;
+  color: #c7d2d4; 
+  font-weight: 500;
+  line-height: 1.35;
+  margin-top: 0.15rem;
+}
+
+.team-member-link {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.team-member-link:hover {
+  background-color: #232736;
+  border-color: var(--color-secondary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.team-member-link:hover .member-name {
+  color: var(--color-secondary);
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.member-gh-badge {
+  align-self: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--bg-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.team-member-link:hover .member-gh-badge {
+  background-color: var(--color-secondary);
+  color: var(--color-dark);
+  transform: scale(1.06);
+}
+
+.member-gh-icon {
+  display: block;
 }

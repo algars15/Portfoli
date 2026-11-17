@@ -13,11 +13,11 @@ const projectsDetails = {
       "Programmed core player logic and implemented scene workflows directly in Unity."
     ],
     team: [
-      { name: "Martí Mira", role: "Level Designer & UI/UX Designer" },
-      { name: "Marc Blánquez", role: "Programmer" },
-      { name: "Arnau Balasch", role: "2D Artist" },
-      { name: "Oscar Alonso", role: "Programmer & Level Designer" },
-      { name: "Toni Llovera", role: "UI/UX Programmer & Programmer" }
+      { name: "Martí Mira", role: "Level Designer & UI/UX Designer", github: "https://github.com/algars15" },
+      { name: "Marc Blánquez", role: "Programmer", github:"https://github.com/MarcBlanquezPadilla" },
+      { name: "Arnau Balasch", role: "2D Artist", github:"https://github.com/Balar05" },
+      { name: "Oscar Alonso", role: "Programmer & Level Designer", github:"https://github.com/oscaralonsoo" },
+      { name: "Toni Llovera", role: "UI/UX Programmer & Programmer", github:"https://github.com/ToniLlovera" }
     ],
     itchioLink: "https://torratsgames.itch.io/odossea",
     uiCaseStudy: [
@@ -42,10 +42,10 @@ const projectsDetails = {
       "Designed and structured the game's user interface and user experience."
     ],
     team: [
-      { name: "Martí Mira", role: "Level Designer, UI Artist & 3D Artist" },
-      { name: "Marc Blánquez", role: "Programmer, 3D Artist & Level Designer" },
-      { name: "Oscar Alonso", role: "Programmer, Sound Programmer & Level Designer" },
-      { name: "Toni Llovera", role: "Programmer, UI Programmer & Technical Artist" }
+      { name: "Martí Mira", role: "Level Designer, UI Artist & 3D Artist", github: "https://github.com/algars15" },
+      { name: "Marc Blánquez", role: "Programmer, 3D Artist & Level Designer", github:"https://github.com/MarcBlanquezPadilla" },
+      { name: "Oscar Alonso", role: "Programmer, Sound Programmer & Level Designer", github:"https://github.com/oscaralonsoo" },
+      { name: "Toni Llovera", role: "Programmer, UI Programmer & Technical Artist", github:"https://github.com/ToniLlovera" }
     ],
     itchioLink: "https://oalonsoo.itch.io/estik",
     uiCaseStudy: [
@@ -73,9 +73,9 @@ const projectsDetails = {
       "Implemented responsive canvas systems, gameplay feedback, and audio cues."
     ],
     team: [
-      { name: "Martí Mira", role: "UI/UX Designer" },
-      { name: "Marc Blánquez", role: "Programmer" },
-      { name: "Arnau Balasch", role: "2D Artist" }
+      { name: "Martí Mira", role: "UI/UX Designer", github: "https://github.com/algars15" },
+      { name: "Marc Blánquez", role: "Programmer", github:"https://github.com/MarcBlanquezPadilla" },
+      { name: "Arnau Balasch", role: "2D Artist", github:"https://github.com/Balar05" }
     ],
     itchioLink: "https://mmiraa15.itch.io/paraules-magiques",
     uiCaseStudy: [
@@ -100,10 +100,10 @@ const projectsDetails = {
     "Designed and built a multi-station cockpit featuring four control stations with diegetic world-space UI screens and live camera render textures."
     ],
     team: [
-      { name: "Martí Mira", role: "VR Developer" },
-      { name: "Marc Blánquez", role: "VR Developer" },
-      { name: "Arnau Balasch", role: "VR Developer" },
-      { name: "Pau Gutsens", role: "VR Developer" }
+      { name: "Martí Mira", role: "VR Developer", github: "https://github.com/algars15" },
+      { name: "Marc Blánquez", role: "VR Developer", github:"https://github.com/MarcBlanquezPadilla" },
+      { name: "Arnau Balasch", role: "VR Developer", github:"https://github.com/Balar05" },
+      { name: "Pau Gutsens", role: "VR Developer", github:"https://github.com/Pau-Gutsens" }
     ],
     
     pdfLink: "doc/DefendTheMoon_Documentation.pdf",
@@ -139,7 +139,7 @@ const projectsDetails = {
       { title: "Pression plate", img: "img/SonOfithaca/cap5.png" },
       { title: "Statue Concepts", img: "img/SonOfithaca/cap8.png" }
     ],
-    team: [{ name: "Nobody Games Studio", role: "Development & Production" }],
+    team: [{ name: "Nobody Games Studio", role: "Development & Production", github:"https://github.com/NobodyGamesStudio" }],
     itchioLink: "https://nobody-games-studio.itch.io/son-of-ithaca"
   },
   medievalTavern: {
@@ -166,10 +166,10 @@ const projectsDetails = {
       { title: "My 3D Assets", img: "img/tavern/cap8.png" }
     ],
     team: [
-      { name: "Martí Mira", role: "Lead 3D Artist" },
-      { name: "Marc Blánquez", role: "3D Artist & Programmer" },
-      { name: "Arnau Balasch", role: "3D Artist" },
-      { name: "Manel Montes", role: "3D Artist" }
+      { name: "Martí Mira", role: "Lead 3D Artist", github: "https://github.com/algars15" },
+      { name: "Marc Blánquez", role: "3D Artist & Programmer", github:"https://github.com/MarcBlanquezPadilla" },
+      { name: "Arnau Balasch", role: "3D Artist", github:"https://github.com/Balar05" },
+      { name: "Manel Montes", role: "3D Artist", github: "https://github.com/ManiManetess" }
     ],
     artstationLink: "https://www.artstation.com/artwork/1NGo48"
   },
@@ -209,11 +209,11 @@ const projectsDetails = {
       "Engineered vehicle-environment collision responses and tuned physical properties (friction, restitution, and track boundaries) in Box2D for responsive arcade handling."
     ],
     team: [
-      { name: "Martí Mira", role: "UI/UX Designer & Programmer" },
-      { name: "Arnau Balasch", role: "UI/UX Designer & Programmer" },
-      { name: "Marc Blánquez", role: "Lead Programmer" },
-      { name: "Manel Montes", role: "UI/UX Designer & Programmer" },
-      { name: "Saüc Pellejero", role: "UI/UX Designer & Programmer" }
+      { name: "Martí Mira", role: "UI/UX Designer & Programmer", github: "https://github.com/algars15" },
+      { name: "Arnau Balasch", role: "UI/UX Designer & Programmer", github:"https://github.com/Balar05" },
+      { name: "Marc Blánquez", role: "Lead Programmer", github:"https://github.com/MarcBlanquezPadilla" },
+      { name: "Manel Montes", role: "UI/UX Designer & Programmer", github: "https://github.com/ManiManetess" },
+      { name: "Saüc Pellejero", role: "UI/UX Designer & Programmer", github:"https://github.com/ZReiNa" }
     ],
     uiCaseStudy: [
       {img: "img/racinggame/HNeaHa.png" },
@@ -249,8 +249,8 @@ const projectsDetails = {
       { title: "Kratos Movement Blueprint", img: "img/GOW/Captura8.png" }
     ],
     team: [
-      { name: "Martí Mira", role: "Level Designer & Blueprint Scripter" },
-      { name: "Marc Blánquez", role: "Level Designer & Blueprint Scripter" }
+      { name: "Martí Mira", role: "Level Designer & Blueprint Scripter", github: "https://github.com/algars15" },
+      { name: "Marc Blánquez", role: "Level Designer & Blueprint Scripter", github:"https://github.com/MarcBlanquezPadilla" }
     ],
     pdfLabel: "View LDD (PDF)",
     pdfLink: "doc/Level Design Document_MartiMira .pdf",
@@ -297,12 +297,32 @@ function openProjectModal(projectId) {
       </div>`;
   }
 
-  let teamHtml = "";
+ let teamHtml = "";
   if (project.team && project.team.length > 0) {
     teamHtml = `
       <h3 class="modal-section-title">Team & Credits</h3>
       <div class="modal-team-grid">
-        ${project.team.map(member => `<div class="team-member"><span class="member-name">${member.name}</span><span class="member-role">${member.role}</span></div>`).join("")}
+        ${project.team.map(member => {
+          if (member.github) {
+            return `
+              <a href="${member.github}" target="_blank" rel="noopener noreferrer" class="team-member team-member-link" title="Veure GitHub de ${member.name}">
+                <div class="member-info">
+                  <span class="member-name">${member.name}</span>
+                  <span class="member-role">${member.role}</span>
+                </div>
+                <div class="member-gh-badge">
+                  <svg class="member-gh-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/>
+                  </svg>
+                </div>
+              </a>`;
+          }
+          return `
+            <div class="team-member">
+              <span class="member-name">${member.name}</span>
+              <span class="member-role">${member.role}</span>
+            </div>`;
+        }).join("")}
       </div>`;
   }
 
