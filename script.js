@@ -275,9 +275,9 @@ const projectsDetails = {
       { name: "Saüc Pellejero", role: "UI/UX Designer & Programmer", github:"https://github.com/ZReiNa" }
     ],
     uiCaseStudy: [
-      {img: "img/racinggame/HNeaHa.png" },
-      {img: "img/racinggame/w7LOAg.png" },
-      {img: "img/racinggame/d8iQIE.png" }
+      {title:"Car selector",img: "img/racinggame/HNeaHa.png" },
+      {title:"Track selector",img: "img/racinggame/w7LOAg.png" },
+      {title:"Track",img: "img/racinggame/d8iQIE.png" }
    
     ],
     itchioLink: "https://mmiraa15.itch.io/racing-game"
