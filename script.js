@@ -270,7 +270,7 @@ const projectsDetails = {
     team: [
       { name: "Martí Mira", role: "UI/UX Designer & Programmer", github: "https://github.com/algars15" },
       { name: "Arnau Balasch", role: "UI/UX Designer & Programmer", github:"https://github.com/Balar05" },
-      { name: "Marc Blánquez", role: "Lead Programmer", github:"https://github.com/MarcBlanquezPadilla" },
+      { name: "Marc Blánquez", role: "UI/UX Designer & Programmer", github:"https://github.com/MarcBlanquezPadilla" },
       { name: "Manel Montes", role: "UI/UX Designer & Programmer", github: "https://github.com/ManiManetess" },
       { name: "Saüc Pellejero", role: "UI/UX Designer & Programmer", github:"https://github.com/ZReiNa" }
     ],
